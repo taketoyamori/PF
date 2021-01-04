@@ -10,8 +10,9 @@
 オリジナルの使い方でありふれた日常に変化を与える事がテーマです。
 ***
 ## テーマを選んだ理由
-自分にとってはありふれた日常でも、少し手を加えてゲスト参加型の休日にしたら<br>
-面白いのでは無いのかと思いテーマに選定しました。
+自分にとってはありふれた日常でも、他人からすると非日常かもしれません<br>
+少し手を加えてゲスト参加型の日常に簡単にできたら双方面白いのでは？<br>
+と思いテーマに選定しました。
 
 ***
 
@@ -28,6 +29,8 @@
 ***
 ## 設計書
 - [ER図](https://drive.google.com/file/d/1QwtUV4mklh9q1iNzJWwJJPVsCyqU4ml6/view?usp=sharing)
+
+- [機能一覧](https://docs.google.com/spreadsheets/d/1UvPVf2CozJpulA6s_BDRLHDjJNjLmfMWCe3sZVkPA9M/edit?usp=sharing)
 
 
 - [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/11MkMNm3VF366d2dOojDbqJ1l8Fl9FbbL8EYF_jtiL3w/edit?usp=sharing)
