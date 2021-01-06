@@ -28,17 +28,7 @@
 ・休日他の人が開いているイベントに参加したい時<br>
 ***
 ## 設計書
-- [ER図](https://drive.google.com/file/d/1QwtUV4mklh9q1iNzJWwJJPVsCyqU4ml6/view?usp=sharing)
-
-- [機能一覧](https://docs.google.com/spreadsheets/d/1UvPVf2CozJpulA6s_BDRLHDjJNjLmfMWCe3sZVkPA9M/edit?usp=sharing)
-
-
-- [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/11MkMNm3VF366d2dOojDbqJ1l8Fl9FbbL8EYF_jtiL3w/edit?usp=sharing)
-
-- [テーブル仕様書](https://drive.google.com/file/d/18ERhKsMiFBBLpxgydIvOIAFj54nfjCK5/view?usp=sharing)
-
-
-- [チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/1M3Zy7kM2y-aediclQIe-jcMWCCldAduqhXVuMhDRqjg/edit#gid=2069665485)
+- [機能一覧](https://docs.google.com/spreadsheets/d/1M3Zy7kM2y-aediclQIe-jcMWCCldAduqhXVuMhDRqjg/edit#gid=2069665485)
 ***
 
 ## 開発環境
