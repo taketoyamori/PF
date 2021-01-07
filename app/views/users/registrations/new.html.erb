@@ -1,11 +1,49 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+ <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="profile-image">
+    <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img"%>
+  </div>
+
+  <div class="profile-image">
+    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", id: 'profile-img' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_field :introduction, autofocus: true, placeholder: "自己紹介" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instagram %><br />
+    <%= f.text_field :instagram, autofocus: true, placeholder: "instagram/url" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tiwitter %><br />
+    <%= f.text_field :twitter, autofocus: true, placeholder: "twitter/url" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :line %><br />
+    <%= f.text_field :line, autofocus: true, placeholder: "line/id" %>
   </div>
 
   <div class="field">

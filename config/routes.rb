@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'top' => 'homes#top'
+  root 'homes#top'
   get 'about' => 'homes#about'
   get 'self' => 'homes#self'
 
