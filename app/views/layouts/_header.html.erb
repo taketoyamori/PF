@@ -1,0 +1,21 @@
+<header>
+  <h1>
+    <%= link_to 'Choice', root_path %>
+  </h1>
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to 'about', about_path %></li>
+        <li><%= link_to 'self', self_path %></li>
+        <li><%= link_to 'events', events_path %></li>
+        <li><%= link_to 'logout', destroy_user_session_path %></li>
+      <% else %>
+        <li><%= link_to 'about', about_path %></li>
+        <li><%= link_to 'self', self_path %></li>
+        <li><%= link_to 'events', events_path %></li>
+        <li><%= link_to 'login', new_user_session_path %></li>
+        <li><%= link_to 'sign-up', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
