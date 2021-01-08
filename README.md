@@ -39,5 +39,7 @@
 ***
 
 ## 使用素材
-- 外部サービスの画像素材決定したら記述予定
+### サイト素材引用元サイト
+- [Pixabay](https://pixabay.com/ja/)
+- [Unsplash](https://unsplash.com/)
 ***

@@ -36,10 +36,25 @@
   <div>
     <%= link_to 'プロフィールを編集する', edit_person_path(@user) %>
   </div>
+  <div>
+    <%= link_to 'イベントを開催する', new_event_path %>
+  </div>
 </div>
 
 <div>
-  <p>ユーザーに紐ずく投稿一覧作成予定</p>
+  <% @events.each do |event| %>
+    <%= link_to event_path(event) do %>
+      <div>
+        <h5>開催日時</h5>
+        <h5><%= event.date.strftime("%Y年%m月%d日") %></h5>
+        <h5>開催エリア</h5>
+        <h5><%= event.prefecture.name %></h5>
+        <h3><%= event.title %></h3>
+        <%= attachment_image_tag event, :event_image, fallback: "no_event_image.jpg", size: '300x200', id: "img" %>
+        <p><%= event.introduction %></p>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 
 
