@@ -1,2 +1,45 @@
-<h1>Users::Persons#show</h1>
-<p>Find me in app/views/users/persons/show.html.erb</p>
+<div>
+  <div>
+    <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img"%>
+    <p>NAME</p>
+    <h3><%= @user.name %></h3>
+    <p>AGE</p>
+    <h3>(<%= @user.age %>)</h3>
+    <p>自己紹介</p>
+    <h3><%= @user.introduction %></h3>
+    <p>LINE-ID</p>
+    <% if @user.line.present? %>
+    <h3><%= @user.line %></h3>
+    <% end %>
+  </div>
+
+  <div class = "sns-link">
+    <ul class="profile-links">
+      <% if @user.instagram.present? %>
+        <li class="profile-link">
+          <%= link_to @user.instagram, target: :_new do %>
+            <i class="fab fa-instagram"></i>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if @user.twitter.present? %>
+        <li class="profile-link">
+          <%= link_to @user.twitter, target: :_new do %>
+            <i class="fab fa-twitter-square"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <%= link_to 'プロフィールを編集する', edit_person_path(@user) %>
+  </div>
+</div>
+
+<div>
+  <p>ユーザーに紐ずく投稿一覧作成予定</p>
+</div>
+
+
