@@ -1,2 +1,56 @@
-<h1>Users::Persons#edit</h1>
-<p>Find me in app/views/users/persons/edit.html.erb</p>
+<div>
+  <div>
+    <h1>ユーザー情報編集画面</h1>
+      <%= form_with model: @user, url: person_path, local: true do |f| %>
+        <div class="profile-image">
+          <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img"%>
+        </div>
+
+        <div class="profile-image">
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", id: 'profile-img' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :age %><br />
+          <%= f.number_field :age, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :introduction %><br />
+          <%= f.text_field :introduction, autofocus: true, placeholder: "自己紹介" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :instagram,'Instagram URL' %><br />
+          <%= f.text_field :instagram, autofocus: true, placeholder: "instagram/url" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :twitter,'Twitter URL' %><br />
+          <%= f.text_field :twitter, autofocus: true, placeholder: "twitter/url" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :line,'LINE ID' %><br />
+          <%= f.text_field :line, autofocus: true, placeholder: "line/id" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "編集完了" %>
+        </div>
+      <% end %>
+  </div>
+  <div>
+    <%= link_to '退会しまーす', person_path(@user), method: :delete %>
+  </div>
+</div>
