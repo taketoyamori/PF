@@ -1,2 +1,41 @@
-<h1>Users::Events#new</h1>
-<p>Find me in app/views/users/events/new.html.erb</p>
+<div>
+  <h2>イベント情報新規投稿</h2>
+  <div>
+    <%= form_with model: @event, url: events_path, local:true do |f| %>
+
+      <div>
+        <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", size: '150x100', id: "img", class: "img-fluid" %>
+      </div>
+
+      <div>
+        <%= f.attachment_field :event_image, placeholder: "イベントイメージ", id: 'product-img' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :prefecture %><br />
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, :prompt => "開催県名を選択" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :title %><br />
+        <%= f.text_field :title, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :introduction %><br />
+        <%= f.text_field :introduction, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :date %><br />
+        <%= f.date_field :date, autofocus: true %>
+      </div>
+
+      <div class="">
+        <%= f.submit 'イベント登録' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
