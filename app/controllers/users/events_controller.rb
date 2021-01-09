@@ -20,7 +20,9 @@ class Users::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @comments = @event.comments
     @user = @event.user
+    @comment = Comment.new
   end
 
   def edit

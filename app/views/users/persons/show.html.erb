@@ -6,7 +6,7 @@
     <p>AGE</p>
     <h3>(<%= @user.age %>)</h3>
     <p>自己紹介</p>
-    <h3><%= @user.introduction %></h3>
+    <h3><%= safe_join(@user.introduction.split("\n"),tag(:br)) %></h3>
     <p>LINE-ID</p>
     <% if @user.line.present? %>
     <h3><%= @user.line %></h3>
@@ -51,7 +51,7 @@
         <h5><%= event.prefecture.name %></h5>
         <h3><%= event.title %></h3>
         <%= attachment_image_tag event, :event_image, fallback: "no_event_image.jpg", size: '300x200', id: "img" %>
-        <p><%= event.introduction %></p>
+        <p><%= safe_join(event.introduction.split("\n"),tag(:br)) %></p>
       </div>
     <% end %>
   <% end %>
