@@ -1,0 +1,21 @@
+<header>
+  <h1>
+    <%= link_to 'Choice', root_path, class: "nav-link" %>
+  </h1>
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to 'about', about_path, class: "nav-link" %></li>
+        <li><%= link_to 'mypage', person_path(current_user.id), class: "nav-link" %></li>
+        <li><%= link_to 'events', events_path, class: "nav-link" %></li>
+        <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+      <% else %>
+        <li><%= link_to 'about', about_path, class: "nav-link" %></li>
+        <li><%= link_to 'self', self_path, class: "nav-link" %></li>
+        <li><%= link_to 'events', events_path, class: "nav-link" %></li>
+        <li><%= link_to 'login', new_user_session_path, class: "nav-link" %></li>
+        <li><%= link_to 'sign-up', new_user_registration_path, class: "nav-link" %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

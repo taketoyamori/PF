@@ -1,0 +1,80 @@
+// Place all the styles related to the registrations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//新規登録画面,ログイン画面のレイアウトについて記載
+
+.item{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo h1{
+  font-size: 120px;
+}
+
+.sign-up-item,
+.log-in-item{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info-area{
+  width: 100%;
+}
+
+.image-field{
+  text-align: center;
+}
+
+.field{
+  display: inline-block;
+  margin: 10px 10px;
+}
+
+.input_btn{
+  display: inline-block;
+  background-color: #626662;
+  box-shadow: 0px 3px #bfbfbf;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.input_btn:hover {
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+
+.input_btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.image_form{
+  display: none;
+}
+
+.submit-field{
+  text-align: center;
+  margin-top: 5px;
+}
+
+.text-area{
+  resize: both;
+}
+
+
+

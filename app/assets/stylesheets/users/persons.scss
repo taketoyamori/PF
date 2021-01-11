@@ -1,3 +1,153 @@
 // Place all the styles related to the users/persons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ユーザー,詳細,編集,新規投稿のレイアウトについて記載
+
+.main-container{
+  width: 100%;
+  display: flex;
+}
+
+.profile-container{
+  width: 40%;
+  height: 100vh;
+  margin-top: 100px;
+}
+
+.profile-box{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.profile-image{
+  border: 2px solid gray;
+  border-radius: 30px;
+  height: 100px;
+  width: 100px;
+}
+
+td{
+  text-align: center;
+}
+
+.sns-link{
+  width: 100%;
+  text-align: center;
+}
+
+.user-event-container{
+  width: 60%;
+  margin-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-event-box{
+  width: 28%;
+  height: 300px;
+  background-color: gray;
+  box-shadow: 10px 10px 15px -10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  margin-top: 30px;
+}
+
+.event-info{
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  background-color:gray;
+  padding: 5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.event-info h6{
+  margin-bottom: 0;
+  color: rgb(13, 12, 12);
+}
+.event-img{
+  width: 90%;
+  height: 60%;
+  box-shadow: 0 0 8px black;
+  border-radius: 5px;
+  margin-top: 5%;
+}
+
+.input_btn2{
+  display: inline-block;
+  background-color: #626662;
+  box-shadow: 0px 3px #bfbfbf;
+  width: 180px;
+  height: 30px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.input_btn2:hover {
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+
+.input_btn2:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.flowbtn8{
+  border-radius:50%;
+  position:relative;
+  display:inline-block;
+  width:50px;
+  height:50px;
+  font-size:30px;
+  text-decoration:none;
+  transition:.5s;
+  }
+
+  .flowbtn8:hover{
+  color:#fff!important;
+  }
+
+  .flowbtn8 i{
+  position:absolute;
+  top:50%;
+  left:50%;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+  }
+
+  .flowbtn8.fl_tw2{
+  border:solid 1px #55acee;
+  color:#55acee;
+  }
+
+  .flowbtn8.fl_tw2:hover{
+  border:solid 1px #55acee;
+  background:#55acee;
+  }
+
+.flowbtn8.insta_btn2 {
+  border:solid 1px #f457fa;
+  color:#f457fa;
+  font-size:35px;
+  }
+
+  .flowbtn8.insta_btn2:hover{
+  border:solid 1px #f457fa;
+  background: #f457fa;
+  }
+
+
+
+

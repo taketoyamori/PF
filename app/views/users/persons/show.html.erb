@@ -1,2 +1,73 @@
-<h1>Users::Persons#show</h1>
-<p>Find me in app/views/users/persons/show.html.erb</p>
+<div>
+  <div class="main-container">
+    <div class="profile-container">
+      <div class="profile-box">
+        <table class="table table-borderless">
+          <tr>
+            <td colspan="3"><%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', class:"profile-image" %></td>
+            <td></td>
+          </tr>
+          <% if @user.id == current_user.id %>
+            <tr>
+              <td colspan="3"><%= link_to 'プロフィールを編集する', edit_person_path(@user), class: "input_btn2" %></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3"><%= link_to 'イベントを開催する', new_event_path, class: "input_btn2" %></td>
+              <td></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>NAME</th>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th>AGE</th>
+            <td><%= @user.age %></td>
+          </tr>
+          <tr>
+            <th>PLOFILE</th>
+            <td><%= safe_join(@user.introduction.split("\n"),tag(:br)) %></td>
+          </tr>
+          <% if @user.line.present? %>
+            <tr>
+              <th>LINE-ID</th>
+              <td><%= @user.line %></td>
+            </tr>
+          <% end %>
+        </table>
+
+        <div class="sns-link">
+          <div>
+            <% if @user.twitter.present? %>
+              <%= link_to @user.twitter, target: :_new, class: "flowbtn8 fl_tw2" do %>
+                <i class="fab fa-twitter"></i>
+              <% end %>
+            <% end %>
+            <% if @user.instagram.present? %>
+                <%= link_to @user.instagram, target: :_new, class: "flowbtn8 insta_btn2" do %>
+                  <i class="fab fa-instagram"></i>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="user-event-container">
+      <% @events.each do |event| %>
+          <div class="user-event-box">
+            <div class="event-info">
+              <%= link_to event_path(event) do %>
+                <h6>開催予定：<%= event.date.strftime("%Y年%m月%d日") %></h6>
+                <h6>開催地：<%= event.prefecture.name %></h6>
+                <h6>イベント名：<%= event.title %></h6>
+                <%= attachment_image_tag event, :event_image, fallback: "no_event_image.jpg", size: '300x200', class: "event-img" %>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
