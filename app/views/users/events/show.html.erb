@@ -1,42 +1,42 @@
-<div id="event_<%= @event.id %>">
-  <h2>イベント詳細情報</h2>
-  <div>
-    <%= link_to person_path(@user) do %>
-      <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img" %>
-      <p><%= @user.name %></p>
-    <% end %>
+<div class="event-info-container">
+  <div class="event-info2">
+    <h1>Event information</h1>
+    <div class="event-info3">
+      <div class="event-owner-info">
+        <h2>Event owner</h2>
+        <%= link_to person_path(@user) do %>
+          <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', class: "event-owner-image" %>
+        <% end %>
+      </div>
+      <div class= "favorite">
+        <%= render 'favorites/favorite', event: @event %>
+      </div>
+    </div>
+
+    <div class="event-info4">
+      <h4>開催日時：<%= @event.date.strftime("%Y年%m月%d日") %></h4>
+      <h4>開催エリア：<%= @event.prefecture.name %></h4>
+      <h4>イベント名：<%= @event.title %></h4>
+      <div class="event-image-box">
+        <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", size: '300x200' %>
+        <p><%= safe_join(@event.introduction.split("\n"),tag(:br)) %></p>
+      <div>
+      <% if @event.user.id == current_user.id %>
+        <div>
+          <%= link_to 'イベント情報を変更', edit_event_path(@event), class: "input_btn3" %>
+        </div>
+      <% end %>
+      <div>
+        <%= link_to 'イベント情報一覧', events_path, class: "input_btn2" %>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <h5>開催日時</h5>
-    <h5><%= @event.date.strftime("%Y年%m月%d日") %></h5>
-    <h5>開催エリア</h5>
-    <h5><%= @event.prefecture.name %></h5>
-    <h3><%= @event.title %></h3>
-    <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", size: '300x200', id: "img" %>
-    <p><%= safe_join(@event.introduction.split("\n"),tag(:br)) %></p>
-  </div>
-
-  <div class= "favorite">
-    <%= render 'favorites/favorite', event: @event %>
-  </div>
-
-  <%= render 'comments/form', event: @event, comment: @comment %>
-
-  <table class= "table" id= "comments_area">
-    <%= render 'comments/index', comments: @comments %>
-  </table>
-
-
-
-  <div>
-    <%= link_to 'イベント情報を変更', edit_event_path(@event) %>
-  </div>
-  <div>
-    <%= link_to 'イベント情報を削除', event_path(@event), method: :delete %>
-  </div>
-  <div>
-    <%= link_to 'イベント情報一覧', events_path %>
+  <div class="comment-area">
+    <table class= "table" id= "comments_area">
+      <%= render 'comments/index', comments: @comments %>
+    </table>
+    <%= render 'comments/form', event: @event, comment: @comment %>
   </div>
 
 </div>

@@ -1,67 +1,81 @@
-<h2>Sign up</h2>
-
- <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <div class="profile-image">
-    <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img"%>
+<div class="main">
+  <div class="item">
+    <div class="logo">
+      <h1>Sign up</h1>
+      <%= render "users/shared/error_messages", resource: resource %>
+    </div>
   </div>
 
-  <div class="profile-image">
-    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", id: 'profile-img' %>
-  </div>
+  <div class="sign-up-item">
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <div class="user-info-area">
+        <div class="image-field">
+          <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img", class: "field" %>
+        </div>
+        <div class="image-field">
+          <%= f.label :profile_image, "画像をアップロード", class: "input_btn" %><br />
+          <%= f.attachment_field :profile_image, class: "image_form" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+      <div class="user-info-area">
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="field">
+          <%= f.label :age %><br />
+          <%= f.number_field :age, autofocus: true %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class="user-info-area">
+        <div class="field">
+          <%= f.label :instagram,'Instagram URL' %><br />
+          <%= f.text_field :instagram, autofocus: true, placeholder: "url ※任意" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age, autofocus: true %>
-  </div>
+        <div class="field">
+          <%= f.label :twitter,'Twitter URL' %><br />
+          <%= f.text_field :twitter, autofocus: true, placeholder: "url ※任意" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :introduction %><br />
-    <%= f.text_field :introduction, autofocus: true, placeholder: "自己紹介" %>
-  </div>
+        <div class="field">
+          <%= f.label :line,'LINE ID' %><br />
+          <%= f.text_field :line, autofocus: true, placeholder: "ID ※任意" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :instagram,'Instagram URL' %><br />
-    <%= f.text_field :instagram, autofocus: true, placeholder: "instagram/url" %>
-  </div>
+      <div class="user-info-area">
+        <div class="field">
+          <%= f.label :introduction %><br />
+          <%= f.text_area :introduction, autofocus: true, placeholder: "自己紹介 ※formサイズ変更可", class: "text-area"%>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :twitter,'Twitter URL' %><br />
-    <%= f.text_field :twitter, autofocus: true, placeholder: "twitter/url" %>
-  </div>
+      <div class="user-info-area">
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+        <div class="field">
+          <%= f.label :password_確認 %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :line,'LINE ID' %><br />
-    <%= f.text_field :line, autofocus: true, placeholder: "line/id" %>
+      <div class="submit-area">
+        <div class="submit-field">
+          <%= f.submit "Sign up", class: "input_btn" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
