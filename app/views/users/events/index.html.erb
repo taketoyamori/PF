@@ -1,20 +1,23 @@
-<h1>イベント一覧ページどす</h1>
-<div>
-  <% @events.each do |event| %>
-    <%= link_to event_path(event) do %>
-      <div>
-        <%= attachment_image_tag event.user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img" %>
-        <p><%= event.user.name %></p>
-      </div>
-      <div>
-        <h5>開催日時</h5>
-        <h5><%= event.date.strftime("%Y年%m月%d日") %></h5>
-        <h5>開催エリア</h5>
-        <h5><%= event.prefecture.name %></h5>
-        <h3><%= event.title %></h3>
-        <%= attachment_image_tag event, :event_image, fallback: "no_event_image.jpg", size: '300x200', id: "img" %>
-        <p><%= safe_join(@event.introduction.split("\n"),tag(:br)) %></p>
-      </div>
-    <% end %>
-  <% end %>
+<div class="event-index-container">
+  <div class="event-index">
+    <h1>Event list</h1>
+    <div class="event-index-area">
+      <% @events.each do |event| %>
+        <%= link_to event_path(event), class: "event-index-link" do %>
+          <div class="event-index-box">
+            <div>
+              <%= attachment_image_tag event, :event_image, fallback: "no_event_image.jpg", size: '300x200', class:" index-event-image" %>
+            </div>
+            <div class="event">
+              <%= attachment_image_tag event.user, :profile_image, fallback: "user_sample.jpg", size: '80x80', class:" index-user-image" %>
+              <p><%= event.user.name %></p>
+              <p>開催日時:<%= event.date.strftime("%Y年%m月%d日") %></p>
+              <p>開催エリア:<%= event.prefecture.name %></p>
+              <p>イベント名:<%= event.title %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>

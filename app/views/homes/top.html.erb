@@ -1,1 +1,15 @@
-ホームのトップです
+<div class="main">
+  <div class="sign-up-in">
+    <div class="link">
+      <h1><%= link_to 'Sign-up', new_user_registration_path, class: "nav-link" %></h1>
+      <h1><%= link_to 'Log-in', new_user_session_path, class: "nav-link" %></h1>
+    </div>
+  </div>
+  <div class="guest">
+    <div class="guest-login">
+      <%= link_to events_path, class: "nav-link" do %>
+      <h1>Guest-login<h1>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,37 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main{
+  display: flex;
+  height: 100vh;
+  padding: 30px;
+}
+
+.sign-up-in{
+  width: 50%;
+  font-size: 100px;
+  position: relative;
+}
+
+.sign-up-in h1{
+  font-size: 100px;
+}
+
+.link{
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+.guest{
+  width: 50%;
+  position: relative;
+
+}
+
+.guest-login{
+  position: absolute;
+  top: 50%;
+  right: 25%;
+}
