@@ -1,7 +1,7 @@
 <div class="event-edit-container">
   <div class="event-edit-title">
     <h1>Event editing</h1>
-    <h2><%= link_to 'Delete event', event_path(@event), class: "nav-link" %></h2>
+    <h2><%= link_to 'Delete event', event_path(@event), method: :delete, class: "nav-link" %></h2>
   </div>
   <div class="event-info-box">
     <%= form_with model: @event, url: event_path(@event), local:true do |f| %>
