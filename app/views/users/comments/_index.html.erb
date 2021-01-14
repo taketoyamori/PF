@@ -10,7 +10,7 @@
  <td>
     <% if comment.user == current_user %>
     <div>
-      <%= link_to "Destroy", event_comment_path(comment.event_id, comment.id), method: :delete %>
+      <%= link_to "Destroy", event_comment_path(comment.event_id, comment.id), method: :delete, remote: true %>
     </div>
     <% end %>
  </td>

@@ -1,12 +1,12 @@
 <% if event.favorited_by?(current_user) %>
     <h1>
-      <%= link_to event_favorites_path(event), method: :delete do %>
+      <%= link_to event_favorites_path(event), method: :delete, remote:true do %>
         <i class="fas fa-heart"></i><%= event.favorites.count %>
       <% end %>
     </h1>
 <% else %>
     <h1>
-      <%= link_to event_favorites_path(event), method: :post do %>
+      <%= link_to event_favorites_path(event), method: :post, remote:true do %>
         <i class="far fa-heart"></i><%= event.favorites.count %>
       <% end %>
     </h1>

@@ -1,4 +1,4 @@
-<%= form_with(model:[event, comment], local: true) do |f| %>
+<%= form_with(model:[event, comment], remote: true) do |f| %>
   <div class="form-group">
     <%= f.text_area :comment %>
   </div>

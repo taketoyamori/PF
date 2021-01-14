@@ -1,1 +1,38 @@
-検索ページです
+<div class="search-container">
+  <%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
+    <div class="field">
+      <%= f.label :date %>
+      <%= f.date_field :date, value: @search_params[:date] %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prefecture_id  %>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, selected: @search_params[:prefecture_id]) %>
+      <%= f.submit '検索', class: "input_btn" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="event-index-container">
+  <div class="event-index">
+    <h1>Event list</h1>
+    <div class="event-index-area">
+      <% @events.each do |event| %>
+        <%= link_to event_path(event), class: "event-index-link" do %>
+          <div class="event-index-box">
+            <div>
+              <%= attachment_image_tag event, :event_image, fallback: "no_event_image.jpg", size: '300x200', class:" index-event-image" %>
+            </div>
+            <div class="event">
+              <%= attachment_image_tag event.user, :profile_image, fallback: "user_sample.jpg", size: '80x80', class:" index-user-image" %>
+              <p><%= event.user.name %></p>
+              <p>開催日時:<%= event.date.strftime("%Y年%m月%d日") %></p>
+              <p>開催エリア:<%= event.prefecture.name %></p>
+              <p>イベント名:<%= event.title %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
