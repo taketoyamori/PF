@@ -6,13 +6,11 @@ class Users::CommentsController < ApplicationController
     comment.event_id = @event.id
     comment.save
     @comment = Event.find(params[:event_id]).comments
-    redirect_to request.referrer || root_url
   end
 
   def destroy
     Comment.find_by(id: params[:id], event_id: params[:event_id]).destroy
     @comment = Event.find(params[:event_id]).comments
-    redirect_to request.referrer || root_url
   end
 
   private

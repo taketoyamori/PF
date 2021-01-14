@@ -8,8 +8,8 @@
           <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', class: "event-owner-image" %>
         <% end %>
       </div>
-      <div class= "favorite">
-        <%= render 'favorites/favorite', event: @event %>
+      <div class="favorite" id="likes_buttons_<%= @event.id %>">
+        <%= render 'users/favorites/favorite', event: @event %>
       </div>
     </div>
 
@@ -34,9 +34,9 @@
 
   <div class="comment-area">
     <table class= "table" id= "comments_area">
-      <%= render 'comments/index', comments: @comments %>
+      <%= render 'users/comments/index', comments: @comments %>
     </table>
-    <%= render 'comments/form', event: @event, comment: @comment %>
+    <%= render 'users/comments/form', event: @event, comment: @comment %>
   </div>
 
 </div>
