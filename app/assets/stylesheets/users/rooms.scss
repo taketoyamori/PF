@@ -1,0 +1,43 @@
+// Place all the styles related to the users/rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.dm-container{
+  padding: 120px;
+  width: 100%;
+  text-align: center;
+}
+
+.rooms-title{
+  font-size: 60px;
+}
+
+.dm-member-area{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+
+.member-name{
+  width: 180px;
+  height: 60px;
+}
+
+.member-img{
+  width: 50px;
+  height: 50px;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.message-area{
+  width: 70%;
+  margin: 30px auto;
+}
+
+.posts{
+  width: 70%;
+  margin: 0 auto;
+}
