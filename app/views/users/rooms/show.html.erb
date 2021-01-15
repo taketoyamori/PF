@@ -1,0 +1,37 @@
+<div class="dm-container">
+  <h1 class="rooms-title">Direct message</h1>
+  <h4>MEMBER</h4>
+  <div class="dm-member-area">
+    <% @entries.each do |e| %>
+      <div class="member-name">
+        <%= link_to person_path(e.user.id) do%>
+          <%= attachment_image_tag e.user, :profile_image, size: '40x40', fallback: "user_sample.jpg", class: "member-img" %>
+          <%= e.user.name %>さん
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="message-area">
+    <table class="table table-borderless">
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <tr>
+            <td><%= m.user.name %></td>
+            <td><%= m.message %></td>
+            <td><%= m.created_at.strftime("%Y-%m-%d %H:%M")%></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="posts">
+    <%= form_for @message do |f| %>
+      <%= f.text_field :message, placeholder: "メッセージを入力して下さい" , size: 70, class:"form-text-field" %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <%= f.submit "投稿",class: 'form-submit'%>
+    <% end %>
+  </div>
+</div>
+

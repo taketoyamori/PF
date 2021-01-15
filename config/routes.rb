@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   scope module: 'users' do
     resources :persons, only: [:show, :edit, :update, :destroy]
+    resources :rooms, only: [:show, :index, :create]
+    resources :messages, only: [:create]
     resources :events do
       resource :favorites, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]

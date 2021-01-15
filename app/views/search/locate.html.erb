@@ -1,21 +1,22 @@
-<div class="search-container">
-  <%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
-    <div class="field">
-      <%= f.label :date %>
-      <%= f.date_field :date, value: @search_params[:date] %>
-    </div>
 
-    <div class="field">
-      <%= f.label :prefecture_id  %>
-      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, selected: @search_params[:prefecture_id]) %>
-      <%= f.submit '検索', class: "input_btn" %>
-    </div>
-  <% end %>
-</div>
 
 <div class="event-index-container">
   <div class="event-index">
-    <h1>Event list</h1>
+    <h1>Search events</h1>
+    <div class="search-container">
+      <%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
+        <div class="field">
+          <%= f.label :date %>
+          <%= f.date_field :date, value: @search_params[:date] %>
+        </div>
+
+        <div class="field">
+          <%= f.label :prefecture_id  %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, :prompt => true) %>
+          <%= f.submit '検索', class: "input_btn" %>
+        </div>
+      <% end %>
+    </div>
     <div class="event-index-area">
       <% @events.each do |event| %>
         <%= link_to event_path(event), class: "event-index-link" do %>
