@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_135753) do
+ActiveRecord::Schema.define(version: 2021_01_16_145726) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 2021_01_14_135753) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "violator_id"
+    t.integer "reporter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reporter_id"], name: "index_relationships_on_reporter_id"
+    t.index ["violator_id", "reporter_id"], name: "index_relationships_on_violator_id_and_reporter_id", unique: true
+    t.index ["violator_id"], name: "index_relationships_on_violator_id"
   end
 
   create_table "rooms", force: :cascade do |t|

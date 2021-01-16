@@ -1,0 +1,54 @@
+// Place all the styles related to the users/relationships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.input_btn6{
+  display: inline-block;
+  background-color: #ff1bd1;
+  box-shadow: 0px 3px #bfbfbf;
+  width: 180px;
+  height: 30px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.input_btn6:hover {
+  color: white;
+  background-color: rgb(242, 0, 0);
+  text-decoration: none;
+}
+
+.input_btn6:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.input_btn7{
+  display: inline-block;
+  background-color: #12c3e2;
+  box-shadow: 0px 3px #bfbfbf;
+  width: 180px;
+  height: 30px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.input_btn7:hover {
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+
+.input_btn7:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
