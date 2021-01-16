@@ -2,9 +2,8 @@ class Users::PersonsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    #DM機能の処理
     @events = @user.events
+    #DM機能の処理
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
     unless @user.id == current_user.id
@@ -37,13 +36,10 @@ class Users::PersonsController < ApplicationController
     end
   end
 
-  #とりあえず時間短縮でユーザー情報物理削除
   def destroy
     @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path
-    #論理削除か悩み中（時間あれば論理削除にしようかな）
-    #論理削除にしたらユーザーに紐ずくデータどうするか考える※dependent=>destroyで消えない？
   end
 
   private
