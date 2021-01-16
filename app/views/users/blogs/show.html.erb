@@ -12,14 +12,9 @@
       <div class="post-body">
         <%= safe_join(@post.body.split("\n"),tag(:br)) %>
       </div>
-      <% if @post.admin_id == current_admin.id %>
-        <div>
-          <%= link_to "記事編集", edit_admins_post_path(@post), class: "input_btn" %>
-        </div>
-        <div>
-          <%= link_to "記事削除", admins_post_path(@post), method: :delete, class: "input_btn" %>
-        </div>
-      <% end%>
+      <div>
+        <%= link_to "Blog一覧へ戻る", blogs_path, class: "input_btn" %>
+      </div>
     </div>
   </div>
 </div>

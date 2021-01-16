@@ -1,3 +1,48 @@
 // Place all the styles related to the admins/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//管理者側ホーム画面レイアウト
+.admin-home-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-home-area{
+  width: 80%;
+  height: 70%;
+  display: inline-block;
+  background-color:gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-home-box{
+  width: 100%;
+  text-align: center;
+}
+
+.admin-home-box h4{
+  font-size: 50px;
+}
+
+.admin-home-box h1{
+  font-size: 40px;
+}
+
+.admin-home-link{
+  display: inline-block;
+  width: 100%;
+  color: black;
+}
+
+.admin-home-link:hover{
+  display: inline-block;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}

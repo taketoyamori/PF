@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'about' => 'homes#about'
   get 'self' => 'homes#self'
-
   get 'search' => 'search#locate'
 
   devise_for :admins, path: 'admin', controllers: {
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
     resources :persons, only: [:show, :edit, :update, :destroy]
     resources :rooms, only: [:show, :index, :create]
     resources :messages, only: [:create]
+    resources :blogs, only: [:index, :show]
     resources :events do
       resource :favorites, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
