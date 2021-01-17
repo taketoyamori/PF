@@ -8,7 +8,7 @@
         <li><%= link_to 'Home', admins_path, class: "nav-link" %></li>
         <li><%= link_to 'Blog新規投稿', new_admins_post_path, class: "nav-link" %></li>
         <li><%= link_to 'Blog一覧', admins_posts_path, class: "nav-link" %></li>
-        <li><%= link_to 'ユーザー管理画面', root_path, class: "nav-link" %></li>
+        <li><%= link_to 'ユーザー管理画面', admins_managements_path, class: "nav-link" %></li>
         <li><%= link_to 'logout', destroy_admin_session_path, method: :delete, class: "nav-link" %></li>
       <% end %>
     </ul>

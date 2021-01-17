@@ -1,0 +1,30 @@
+<div class="management-container">
+  <div class="management-area">
+    <h1>ユーザー情報一覧</h1>
+    <table class="table admin-management-table">
+      <tr>
+        <th></th>
+        <th>名前</th>
+        <th>年齢</th>
+        <th>Email</th>
+        <th>アカウント</th>
+        <th>通報件数</th>
+        <th>強制退会ボタン</th>
+      </tr>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", class:"admin-management-image" %></td>
+            <td><%= user.name %></td>
+            <td><%= user.age %></td>
+            <td><%= user.email %></td>
+            <td><%= user.is_deleted ? "無効" : "有効" %></td>
+            <td><%= user.reporters.count %></td>
+            <% if user.is_deleted? == false %>
+             <td><%= link_to "強制退会", admins_management_path(user.id), method: :delete %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+      <%= paginate @users %>
+  </div>
+</div>

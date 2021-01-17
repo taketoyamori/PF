@@ -2,9 +2,11 @@
   <div class="item">
     <div class="logo">
       <h1>User edit</h1>
-      <div>
-        <h2><%= link_to '※Account deletion', person_path(@user), method: :delete, class: "nav-link" %></h2>
-      </div>
+        <% if user_signed_in? && @user.id == current_user.id %>
+          <div>
+            <h2><%= link_to '※Account deletion', person_path(@user), method: :delete, class: "nav-link" %></h2>
+          </div>
+        <% end %>
     </div>
   </div>
 

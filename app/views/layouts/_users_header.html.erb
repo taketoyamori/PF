@@ -9,7 +9,7 @@
         <li><%= link_to 'Blogs', blogs_path, class: "nav-link" %></li>
         <li><%= link_to 'mypage', person_path(current_user.id), class: "nav-link" %></li>
         <li><%= link_to 'all events', events_path, class: "nav-link" %></li>
-        <li><%= link_to 'seach', search_path, class: "nav-link" %></li>
+        <li><%= link_to 'search', search_path, class: "nav-link" %></li>
         <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "nav-link" %></li>
       <% else %>
         <li><%= link_to 'about', about_path, class: "nav-link" %></li>

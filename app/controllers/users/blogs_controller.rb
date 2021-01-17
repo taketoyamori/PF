@@ -1,11 +1,11 @@
 class Users::BlogsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @blogs = Post.all.page(params[:page]).per(8)
   end
 
   def show
-    @post = Post.find(params[:id])
+    @blog = Post.find(params[:id])
   end
 
 end

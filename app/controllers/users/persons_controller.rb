@@ -2,7 +2,7 @@ class Users::PersonsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @events = @user.events
+    @events = @user.events.page(params[:page]).per(9)
     #DM機能の処理
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
@@ -38,7 +38,9 @@ class Users::PersonsController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    @user.update(is_deleted: true)
+    reset_session #sessionを切る=ログアウト
+    flash[:notice] = "退会処理が完了しました。"
     redirect_to root_path
   end
 
