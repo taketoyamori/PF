@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :violators, through: :violator_relationships, source: :violator
   #通報者側
   has_many :reporter_relationships, class_name:"Relationship", foreign_key: :reporter_id, dependent: :destroy
-  has_many :reporters, through: :passive_relationships, source: :reporter
+  has_many :reporters, through: :reporter_relationships, source: :reporter
 
   attachment :profile_image
 
@@ -25,6 +25,10 @@ class User < ApplicationRecord
 
   def reported_by?(user)
     violator_relationships.find_by(reporter_id: user.id).present?
+  end
+
+  def active_for_authentication?
+    super && (self.is_deleted == false)
   end
 
 end

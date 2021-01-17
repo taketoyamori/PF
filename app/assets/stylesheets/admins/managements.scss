@@ -1,0 +1,57 @@
+// Place all the styles related to the admins/managements controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.management-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.management-area{
+  width: 80%;
+  height: 70%
+}
+
+.admin-management-table{
+  text-align: center;
+}
+
+.admin-management-table td{
+  vertical-align: middle;
+}
+
+.admin-management-image{
+  border: 2px solid gray;
+  border-radius: 30px;
+  height: 50px;
+  width: 50px;
+}
+
+.input_btn8{
+  display: inline-block;
+  background-color: #7bd839;
+  box-shadow: 0px 3px #bfbfbf;
+  width: 180px;
+  height: 30px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.input_btn8:hover {
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+
+.input_btn8:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}

@@ -2,7 +2,7 @@ class SearchController < ApplicationController
 
   def locate
     @search_params = event_search_params
-    @events = Event.search(@search_params).includes(:prefecture, :user)
+    @events = Event.search(@search_params).page(params[:page]).per(8).includes(:prefecture, :user)
   end
 
   private

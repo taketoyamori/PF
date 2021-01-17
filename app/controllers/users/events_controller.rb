@@ -15,7 +15,7 @@ class Users::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.all.page(params[:page]).per(8)
   end
 
   def show

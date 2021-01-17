@@ -60,3 +60,23 @@ li {
 nav {
   margin: 0 0 0 auto;
 }
+
+.pagination {
+  justify-content: center;
+}
+/* ページ番号 */
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+/* ページ番号 */
+.pagination>.active>a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+/*ホバー時*/
+.pagination>li>a:hover {
+  border-radius: 15px;
+}

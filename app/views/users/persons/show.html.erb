@@ -35,9 +35,9 @@
           </tr>
         <% end %>
         <tr>
-          <th>DM</th>
-          <td>
-            <% unless @user.id == current_user.id %>
+          <% unless @user.id == current_user.id %>
+            <th>DM</th>
+            <td>
               <% if @isRoom == true %>
                 <div class="link-room">
                   <%= link_to "Direct message", room_path(@roomId), class:"input_btn4" %>
@@ -52,20 +52,20 @@
                   <% end %>
                 </div>
               <% end %>
-            <% end %>
-          </td>
+            </td>
+          <% end %>
         </tr>
         <tr>
+        <% if current_user != @user %>
           <th>違反通報</th>
           <td>
-            <% if current_user != @user %>
-              <% if @user.reported_by?(current_user) %>
-                <%= link_to "通報を取り消す", person_relationships_path(@user.id), method: :delete, class: "input_btn7" %>
-              <% else %>
-                <%= link_to "違反を通報する", person_relationships_path(@user.id), method: :post, class: "input_btn6" %>
-              <% end %>
+            <% if @user.reported_by?(current_user) %>
+              <%= link_to "通報を取り消す", person_relationships_path(@user.id), method: :delete, class: "input_btn7" %>
+            <% else %>
+              <%= link_to "違反を通報する", person_relationships_path(@user.id), method: :post, class: "input_btn6" %>
             <% end %>
           </td>
+        <% end %>
         </tr>
       </table>
 
@@ -101,7 +101,6 @@
         </div>
       <% end %>
     <% end %>
+    <%= paginate @events %>
   </div>
 </div>
-
-<i class="far fa-paper-plane"></i>
