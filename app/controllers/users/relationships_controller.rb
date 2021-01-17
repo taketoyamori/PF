@@ -1,4 +1,5 @@
 class Users::RelationshipsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     relationship = current_user.reporter_relationships.build(violator_id: params[:person_id])

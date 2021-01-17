@@ -13,9 +13,10 @@
         <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "nav-link" %></li>
       <% else %>
         <li><%= link_to 'about', about_path, class: "nav-link" %></li>
-        <li><%= link_to 'Blogs', blogs_path, class: "nav-link" %></li>
         <li><%= link_to 'self', self_path, class: "nav-link" %></li>
-        <li><%= link_to 'events', events_path, class: "nav-link" %></li>
+        <li><%= link_to 'Blogs', blogs_path, class: "nav-link" %></li>
+        <li><%= link_to 'all events', events_path, class: "nav-link" %></li>
+        <li><%= link_to 'search', search_path, class: "nav-link" %></li>
         <li><%= link_to 'login', new_user_session_path, class: "nav-link" %></li>
         <li><%= link_to 'sign-up', new_user_registration_path, class: "nav-link" %></li>
       <% end %>
