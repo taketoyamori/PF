@@ -1,8 +1,10 @@
 class Users::PersonsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_user
+  before_action :ensure_correct_user, only: [:update, :edit]
 
   def show
-    @user = User.find(params[:id])
-    @events = @user.events.page(params[:page]).per(9)
+    @events = @user.events.page(params[:page]).per(9).includes(:prefecture)
     #DM機能の処理
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
@@ -24,11 +26,9 @@ class Users::PersonsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user= User.find(params[:id])
     if @user.update(person_params)
       redirect_to person_path(@user)
     else
@@ -37,7 +37,6 @@ class Users::PersonsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.update(is_deleted: true)
     reset_session #sessionを切る=ログアウト
     flash[:notice] = "退会処理が完了しました。"
@@ -46,8 +45,19 @@ class Users::PersonsController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def person_params
     params.require(:user).permit(:profile_image, :name, :email, :age, :introduction, :instagram, :twitter, :line)
+  end
+
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to person_path(current_user.id)
+    end
   end
 
 end

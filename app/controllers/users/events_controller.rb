@@ -1,4 +1,6 @@
 class Users::EventsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+  before_action :ensure_correct_user, only: [:update, :edit, :destroy]
 
   def new
     @event = Event.new
@@ -15,7 +17,7 @@ class Users::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.page(params[:page]).per(8)
+    @events = Event.all.page(params[:page]).per(8).includes(:prefecture, :user)
   end
 
   def show
@@ -48,6 +50,14 @@ class Users::EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:user_id, :prefecture_id, :title, :introduction, :date, :event_image)
+  end
+
+  def ensure_correct_user
+    @event = Event.find(params[:id])
+    @user = @event.user
+    unless @user == current_user
+      redirect_to events_path
+    end
   end
 
 end
