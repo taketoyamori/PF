@@ -13,7 +13,7 @@
       </tr>
         <% @users.each do |user| %>
           <tr>
-            <td><%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", class:"admin-management-image" %></td>
+            <td><%= attachment_image_tag user, :profile_image, fallback: "user_sample.jpg", class:"admin-management-image" %></td>
             <td><%= user.name %></td>
             <td><%= user.age %></td>
             <td><%= user.email %></td>

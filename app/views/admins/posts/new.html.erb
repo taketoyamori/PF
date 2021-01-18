@@ -6,7 +6,7 @@
           <h1>Blog記事新規作成</h1>
         </div>
         <div>
-          <%= attachment_image_tag @post, :post_image, fallback: "no_event_image.jpg", size: "250x250" , class: "post-image" %>
+          <%= attachment_image_tag @post, :post_image, fallback: "no_event_image.jpg", size: "250x250" , class: "post-image", id: "img" %>
         </div>
         <div>
           <%= f.label :post_image, "画像をアップロード", class: "input_btn_admin" %><br />
@@ -15,13 +15,14 @@
       </div>
       <div class="post-area-right">
         <div>
-          <%= f.label :title, "題名" %><br />
+          <%= f.label :title, "タイトル" %><br />
           <%= f.text_field :title, autofocus: true, class: "post-title" %>
         </div>
         <div>
           <%= f.label :body, "記事本文" %><br />
           <%= f.text_area :body, autofocus: true, class: "post-body" %>
         </div>
+        <%= render 'layouts/error', obj: @post %>
         <div>
           <%= f.submit '投稿する', class: "input_btn" %>
         </div>
