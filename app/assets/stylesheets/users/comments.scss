@@ -1,3 +1,24 @@
 // Place all the styles related to the users/comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//コメント部分のデザイン
+.comment-link{
+  color:rgb(71, 71, 72);
+}
+
+.comment-link:hover{
+  color:rgb(0, 140, 23);
+  text-decoration: none;
+}
+
+.comment-area{
+  width: 80%;
+  margin: 20px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.event-c-form{
+  width: 50%;
+}

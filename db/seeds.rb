@@ -8,8 +8,8 @@ User.create!(
   password: "sample11111",
   age: 25,
   introduction: "よろしくお願いします！",
-  instagram: "sss",
-  twitter: "sss",
+  instagram: "https://www.instagram.com/",
+  twitter: "https://twitter.com/",
   line: "xxxxx" )
 
 

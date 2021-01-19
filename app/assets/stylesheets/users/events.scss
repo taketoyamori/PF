@@ -49,7 +49,6 @@
   width: 100%;
   padding: 20px;
   height: 600px;
-
 }
 
 .event-info2{
@@ -69,6 +68,43 @@
   justify-content: center;
   align-items: center;
   margin-top: 5%;
+}
+
+.event-info-center{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-image-box{
+  width: 50%;
+}
+
+.event-show-image{
+  width: 90%;
+  height: 70%;
+}
+
+.event-info-box{
+  width: 50%;
+}
+
+.event-info-box h6{
+  margin-top: 20px;
+  background-color:rgba(191, 191, 191, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+  color:rgb(63, 63, 63);
+}
+
+.event-show-link{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .event-owner-info{
@@ -95,11 +131,6 @@
   margin: 3% auto 0 auto;
 }
 
-.event-image-box{
-  width: 100%;
-}
-
-
 .favorite{
   width: 30%;
 }
@@ -116,7 +147,7 @@
   text-decoration: none;
   text-align: center;
   border: none;
-  margin-bottom: 10px;
+  margin: 20px 10px; 
 }
 
 .input_btn3:hover {
@@ -128,12 +159,6 @@
   box-shadow: none;
   position: relative;
   top: 3px;
-}
-
-.comment-area{
-  width: 80%;
-  margin: 20px auto;
-  padding: 30px;
 }
 
 //一覧画面
