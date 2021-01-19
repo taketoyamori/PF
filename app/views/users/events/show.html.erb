@@ -1,6 +1,7 @@
 <div class="event-info-container">
   <div class="event-info2">
     <h1>Event information</h1>
+    
     <div class="event-info3">
       <div class="event-owner-info">
         <h2>Event owner</h2>
@@ -13,27 +14,29 @@
       </div>
     </div>
 
-    <div class="event-info4">
-      <h4>開催日時：<%= @event.date.strftime("%Y年%m月%d日") %></h4>
-      <h4>開催エリア：<%= @event.prefecture.name %></h4>
-      <h4>イベント名：<%= @event.title %></h4>
+    <div class="event-info-center">
       <div class="event-image-box">
-        <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", size: '300x200' %>
-        <p><%= safe_join(@event.introduction.split("\n"),tag(:br)) %></p>
-      <div>
-      <% if @event.user.id == current_user.id %>
-        <div>
-          <%= link_to 'イベント情報を変更', edit_event_path(@event), class: "input_btn3" %>
-        </div>
-      <% end %>
-      <div>
-        <%= link_to 'イベント情報一覧', events_path, class: "input_btn2" %>
+        <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", size: '300x200', class: "event-show-image" %>
+      </div>
+      <div class="event-info-box">
+        <h6>開催日時：<%= @event.date.strftime("%Y年%m月%d日") %></h6>
+        <h6>開催エリア：<%= @event.prefecture.name %></h6>
+        <h6>イベント名：<%= @event.title %></h6>
+        <h6>詳細情報</br><%= safe_join(@event.introduction.split("\n"),tag(:br)) %></h6>
       </div>
     </div>
   </div>
 
+  <div class= "event-show-link">
+    <% if @event.user.id == current_user.id %>
+      <%= link_to 'イベント情報を変更', edit_event_path(@event), class: "input_btn3" %>
+    <% end %>
+      <%= link_to 'イベント情報一覧', events_path, class: "input_btn2" %>
+  </div>
+
   <div class="comment-area">
-    <table class= "table" id= "comments_area">
+  <h1 class="comment-title">Comment</h1>
+    <table class= "table table-borderless" id= "comments_area">
       <%= render 'users/comments/index', comments: @comments %>
     </table>
     <%= render 'users/comments/form', event: @event, comment: @comment %>

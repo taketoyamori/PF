@@ -10,7 +10,7 @@
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <div class="user-info-area">
         <div class="image-field">
-          <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', id: "img", class: "field" %>
+          <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", id: "img", class: "user-image" %>
         </div>
         <div class="image-field">
           <%= f.label :profile_image, "画像をアップロード", class: "input_btn" %><br />
