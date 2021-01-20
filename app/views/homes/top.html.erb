@@ -1,14 +1,17 @@
-<div class="main">
-  <div class="home-left">
-    <div class="home-link">
-      <h1 class="font-d"><%= link_to 'Sign-up', new_user_registration_path, class: "home-top-link" %></h1>
-      <h1 class="font-d"><%= link_to 'Log-in', new_user_session_path, class: "home-top-link" %></h1>
+<div class="top-bg">
+  <div class="main">
+    <div class="home-left">
+      <div class="home-link">
+        <h1 class="font-d"><%= link_to 'Sign-up', new_user_registration_path, class: "home-top-link" %></h1>
+        <h1 class="font-d"><%= link_to 'Log-in', new_user_session_path, class: "home-top-link" %></h1>
+      </div>
     </div>
-  </div>
-  <div class="home-right">
-    <div class="guest-link">
-      <h1 class="font-d"><%= link_to 'Guest-login', events_path, class: "home-top-link" %></h1>
-      <h1 class="font-d"><%= link_to 'admin-login', new_admin_session_path, class: "admin-login-link" %></h1>
+    <div class="home-right">
+      <div class="guest-link">
+        <h1 class="font-d"><%= link_to 'Guest-login', events_path, class: "home-top-link" %></h1>
+        <h1 class="font-d"><%= link_to 'admin-login', new_admin_session_path, class: "admin-login-link" %></h1>
+      </div>
     </div>
   </div>
 </div>
+<%= render 'layouts/footer' %>

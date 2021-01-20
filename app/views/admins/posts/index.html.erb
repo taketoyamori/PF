@@ -1,21 +1,22 @@
-<div class="post-container">
-  <div class="blog-top">
-    <h1>Choice Blog</h1>
-  </div>
-  <div class="blog-area">
-    <% @posts.each do |post| %>
-      <%= link_to admins_post_path(post.id), class: "blog-link" do %>
-        <div class="blog-box">
-          <div>
-            <%= attachment_image_tag post, :post_image, fallback: "no_event_image.jpg", size: '300x200', class:"blog-image" %>
+
+ <div class="blog-container-inner">
+    <div class="blog-top">
+      <h1>投稿済記事一覧</h1>
+    </div>
+    <div class="blog-area">
+      <% @posts.each do |post| %>
+        <%= link_to admins_post_path(post.id), class: "blog-link2" do %>
+          <div class="blog-box">
+            <div>
+              <%= attachment_image_tag post, :post_image, fallback: "no_event_image.jpg", size: '300x200', class:"blog-image" %>
+            </div>
+            <div class="blog">
+              <p><%= post.title %></p>
+              <p>投稿日:<%= post.created_at.strftime("%Y年%m月%d日") %></p>
+            </div>
           </div>
-          <div class="blog">
-            <p><%= post.title %></p>
-            <p>投稿日:<%= post.created_at.strftime("%Y年%m月%d日") %></p>
-          </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
   <%= paginate @posts %>
-</div>
+<div>
