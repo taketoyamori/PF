@@ -1,42 +1,43 @@
-<div class="event-edit-container">
-  <div class="event-edit-title">
-    <h1>Event editing</h1>
-    <h2><%= link_to 'Delete event', event_path(@event), method: :delete, class: "nav-link" %></h2>
-    <%= render 'layouts/error', obj: @event %>
-  </div>
-  <div class="event-info-box">
-    <%= form_with model: @event, url: event_path(@event), local:true do |f| %>
-      <div class="event-image-area">
-        <div>
-          <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", class: "event-image", id: "img" %>
+<div class="event-bg">
+  <div class="event-edit-container">
+    <div class="event-edit-title">
+      <h1 class="font-b">Event editing</h1>
+      <h2><%= link_to 'Delete event', event_path(@event), method: :delete, class: "font-n" %></h2>
+      <%= render 'layouts/error', obj: @event %>
+    </div>
+    <div class="event-info-box">
+      <%= form_with model: @event, url: event_path(@event), local:true do |f| %>
+        <div class="event-image-area">
+          <div>
+            <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", class: "event-image", id: "img" %>
+          </div>
+          <div>
+            <%= f.label :event_image, "画像をアップロード", class: "input_btn" %><br />
+            <%= f.attachment_field :event_image, class: "image_form" %>
+          </div>
+        </div>
+        <div class="event-data-area">
+          <div class="field">
+            <%= f.label :prefecture %><br />
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, :prompt => "開催県名を選択" %>
+          </div>
+          <div class="field">
+            <%= f.label :date %><br />
+            <%= f.date_field :date, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :title %><br />
+            <%= f.text_field :title, autofocus: true %>
+          </div>
         </div>
         <div>
-          <%= f.label :event_image, "画像をアップロード", class: "input_btn" %><br />
-          <%= f.attachment_field :event_image, class: "image_form" %>
+          <%= f.label :introduction %><br />
+          <%= f.text_area :introduction, autofocus: true, class: "introduction" %>
         </div>
-      </div>
-      <div class="event-data-area">
-        <div class="field">
-          <%= f.label :prefecture %><br />
-          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, :prompt => "開催県名を選択" %>
+        <div>
+          <%= f.submit 'イベント情報変更', class: "input_btn" %>
         </div>
-        <div class="field">
-          <%= f.label :date %><br />
-          <%= f.date_field :date, autofocus: true %>
-        </div>
-        <div class="field">
-          <%= f.label :title %><br />
-          <%= f.text_field :title, autofocus: true %>
-        </div>
-      </div>
-      <div>
-        <%= f.label :introduction %><br />
-        <%= f.text_area :introduction, autofocus: true, class: "introduction" %>
-      </div>
-      <div>
-        <%= f.submit 'イベント情報変更', class: "input_btn" %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
