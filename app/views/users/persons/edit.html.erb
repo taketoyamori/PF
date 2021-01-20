@@ -1,11 +1,9 @@
-<div class="main">
+<div class="main-b">
   <div class="item">
     <div class="logo">
-      <h1>User edit</h1>
+      <h1 class="font-d">User edit</h1>
         <% if user_signed_in? && @user.id == current_user.id %>
-          <div>
-            <h2><%= link_to '※Account deletion', person_path(@user), method: :delete, class: "nav-link" %></h2>
-          </div>
+          <h2 class="font-d"><%= link_to '※Account deletion(退会)', person_path(@user), method: :delete, class: "Account-deletion" %></h2>
         <% end %>
     </div>
     <%= render 'layouts/error', obj: @user %>
