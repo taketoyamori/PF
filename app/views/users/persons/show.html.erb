@@ -2,7 +2,6 @@
   <div class="profile-container">
     <div class="profile-box">
       <div class="profile-left">
-
         <div class="pi-area">
           <h1 class="font-b">USER////DATA</h1>
           <%= attachment_image_tag @user, :profile_image, fallback: "user_sample.jpg", size: '80x80', class:"profile-image" %>
@@ -87,8 +86,8 @@
           <% end %>
         </div>
         <%= paginate @events %>
+        <%= render 'layouts/footer' %>
       </div>
     </div>
   </div>
 </div>
-<%= render 'layouts/footer' %>

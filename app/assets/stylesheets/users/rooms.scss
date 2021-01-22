@@ -2,9 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.room-bg{
+  width: 100%;
+}
+
+.room-bg:before{
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-image: image-url("bg-img3.jpg");
+  background-size: cover;
+}
 
 .dm-container{
-  padding: 120px;
+  margin: 120px auto 50px auto;
   width: 100%;
   text-align: center;
 }
@@ -25,6 +41,15 @@
   height: 60px;
 }
 
+.dm-link{
+  color: rgb(240, 71, 255);
+}
+
+.dm-link:hover{
+  color: rgb(19, 31, 124);
+  text-decoration: none;
+}
+
 .member-img{
   width: 50px;
   height: 50px;
@@ -40,4 +65,19 @@
 .posts{
   width: 70%;
   margin: 0 auto;
+}
+
+.form-text-field{
+  width: 60%;
+  resize: both;
+}
+
+@media screen and (max-width:425px) {
+  .message-area{
+    width: 95%;
+  }
+
+  .form-text-field{
+    width: 100%;
+  }
 }

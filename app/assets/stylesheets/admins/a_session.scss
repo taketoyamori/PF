@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color:white;
 }
 
 .admin-session-area{
@@ -49,4 +50,32 @@
   top: 3px;
 }
 
+@media screen and (max-width:1024px) {
+  .admin-session-area{
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+  .admin-session-area{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .admin-session-area h2{
+    margin-right: initial;
+    font-size: 40px;
+  }
+
+  .input_btn5{
+    margin-left: initial;
+  }
+}
 

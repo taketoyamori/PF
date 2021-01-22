@@ -1,24 +1,26 @@
-<div class="admin-session-container">
-  <div class="admin-session-form">
-    <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
-      <div class="admin-session-area">
-        <div>
-          <h2>Admin-Login</h2>
-        </div>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+<div class="rs-bg">
+  <div class="admin-session-container">
+    <div class="admin-session-form">
+      <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+        <div class="admin-session-area">
+          <div>
+            <h2 class="font-d">Admin-Login</h2>
+          </div>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
 
-        <div class="field">
-          <%= f.submit "Log in", class: "input_btn5" %>
+          <div class="field">
+            <%= f.submit "Log in", class: "input_btn5" %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,35 +1,37 @@
-<%= form_with model: @post, url: admins_posts_path, class:"post-form", local:true do |f| %>
-  <div class="post-container">
-    <div class="post-area">
-      <div class="post-area-left">
-        <div>
-          <h1>Blog記事新規作成</h1>
+<div class="post-bg2">
+  <%= form_with model: @post, url: admins_posts_path, class:"post-form", local:true do |f| %>
+    <div class="post-container">
+      <div class="post-area">
+        <div class="post-area-left">
+          <div>
+            <h1>Blog記事新規作成</h1>
+          </div>
+          <div>
+            <%= attachment_image_tag @post, :post_image, fallback: "no_event_image.jpg", size: "250x250" , class: "post-image", id: "img" %>
+          </div>
+          <div>
+            <%= f.label :post_image, "画像をアップロード", class: "input_btn_admin" %><br />
+            <%= f.attachment_field :post_image, class: "post-image-form" %>
+          </div>
         </div>
-        <div>
-          <%= attachment_image_tag @post, :post_image, fallback: "no_event_image.jpg", size: "250x250" , class: "post-image", id: "img" %>
-        </div>
-        <div>
-          <%= f.label :post_image, "画像をアップロード", class: "input_btn_admin" %><br />
-          <%= f.attachment_field :post_image, class: "post-image-form" %>
-        </div>
-      </div>
-      <div class="post-area-right">
-        <div>
-          <%= f.label :title, "タイトル" %><br />
-          <%= f.text_field :title, autofocus: true, class: "post-title" %>
-        </div>
-        <div>
-          <%= f.label :body, "記事本文" %><br />
-          <%= f.text_area :body, autofocus: true, class: "post-body" %>
-        </div>
-        <%= render 'layouts/error', obj: @post %>
-        <div>
-          <%= f.submit '投稿する', class: "input_btn" %>
-        </div>
-        <div>
-          <%= link_to "投稿をやめる", admins_path, class:"input_btn" %>
+        <div class="post-area-right">
+          <div>
+            <%= f.label :title, "タイトル" %><br />
+            <%= f.text_field :title, autofocus: true, class: "post-title" %>
+          </div>
+          <div>
+            <%= f.label :body, "記事本文" %><br />
+            <%= f.text_area :body, autofocus: true, class: "post-body-area" %>
+          </div>
+          <%= render 'layouts/error', obj: @post %>
+          <div>
+            <%= f.submit '投稿する', class: "input_btn" %>
+          </div>
+          <div>
+            <%= link_to "投稿をやめる", admins_path, class:"input_btn" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

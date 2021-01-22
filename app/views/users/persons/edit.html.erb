@@ -4,7 +4,7 @@
       <div class="logo">
         <h1 class="font-d">User edit</h1>
           <% if user_signed_in? && @user.id == current_user.id %>
-            <h2 class="font-d"><%= link_to '※Account deletion(退会)', person_path(@user), method: :delete, class: "Account-deletion" %></h2>
+            <h2 class="font-d"><%= link_to '※Account deletion(退会はこちらをクリック)', person_path(@user), method: :delete, class: "Account-deletion" %></h2>
           <% end %>
           <%= render 'layouts/error', obj: @user %>
       </div>
