@@ -1,5 +1,5 @@
 <div class="rs-bg">
-  <div class="main-b">
+  <div class="login-main-b">
     <div class="item">
       <div class="logo">
         <h1 class="font-d">Log in</h1>
@@ -10,7 +10,7 @@
 
     <div class="log-in-item">
       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-        <div class="user-info-area">
+        <div class="login-info-area">
           <div class="field">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

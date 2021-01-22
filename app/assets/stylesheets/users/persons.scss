@@ -169,50 +169,104 @@
 }
 
 .flowbtn8{
-  border-radius:50%;
-  position:relative;
-  display:inline-block;
-  width:50px;
-  height:50px;
-  font-size:30px;
-  text-decoration:none;
-  transition:.5s;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  text-decoration: none;
+  transition: 0.5s;
   }
 
 .flowbtn8:hover{
-color:#fff!important;
+color: #fff!important;
 }
 
 .flowbtn8 i{
-  position:absolute;
-  top:50%;
-  left:50%;
-  -ms-transform:translate(-50%,-50%);
-  -webkit-transform:translate(-50%,-50%);
-  transform:translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 
 .flowbtn8.fl_tw2{
-  border:solid 1px #55acee;
-  color:#55acee;
+  border: solid 1px #55acee;
+  color: #55acee;
 }
 
 .flowbtn8.fl_tw2:hover{
-  border:solid 1px #55acee;
-  background:#55acee;
+  border: solid 1px #55acee;
+  background: #55acee;
 }
 
 .flowbtn8.insta_btn2{
   border:solid 1px #f457fa;
-  color:#f457fa;
-  font-size:35px;
+  color: #f457fa;
+  font-size: 35px;
 }
 
 .flowbtn8.insta_btn2:hover{
-  border:solid 1px #f457fa;
+  border: solid 1px #f457fa;
   background: #f457fa;
 }
 
+@media screen and (max-width:1024px) {
+  //ユーザー詳細情報画面
+  .profile-right{
+    margin-left: 40%;
+  }
+
+  .user-event-link{
+    width: 42%;
+  }
+
+  //ユーザー詳細情報画面
+
+}
+
+@media screen and (max-width:768px) {
+  //ユーザー詳細情報画面
+  .user-event-link{
+    width: 40%;
+  }
+
+  //ユーザー詳細情報画面
+
+}
+
+@media screen and (max-width:425px) {
+  //ユーザー詳細情報画面
+  .profile-box{
+    display: block;
+  }
+
+  .profile-left{
+    width: 100%;
+    text-align: center;
+    position: static;
+  }
+
+  .profile-right{
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 30px;
+  }
+
+  .user-event-link{
+    display: inline-block;
+    width: 90%;
+    margin: 20px;
+  }
+
+  //ユーザー詳細情報画面
+  .Account-deletion{
+    font-size: 30px;
+  }
+
+}
 
 
 

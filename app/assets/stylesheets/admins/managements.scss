@@ -13,7 +13,6 @@
 
 .management-area{
   width: 80%;
-  height: 70%;
 }
 
 .admin-management-table{
@@ -55,4 +54,35 @@
   box-shadow: none;
   position: relative;
   top: 3px;
+}
+
+@media screen and (max-width: 1024px) {
+  .management-area{
+    margin-top: 15%;
+    text-align: center;
+  }
+
+  .management-area h1{
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .management-area{
+    margin-top: 3%;
+  }
+
+  .management-area{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .management-area h1{
+    font-size: 30px;
+  }
+
+  .management-area{
+    text-align: initial;
+  }
 }

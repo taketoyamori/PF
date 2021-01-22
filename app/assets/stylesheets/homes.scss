@@ -33,7 +33,6 @@
 
 .home-left{
   width: 50%;
-  font-size: 100px;
   position: relative;
 }
 
@@ -71,5 +70,80 @@
   color: transparent;
 }
 
+@media screen and (max-width: 1024px) {
 
+  .home-left h1{
+    font-size: 80px;
+  }
+
+  .home-link{
+    top: 60%;
+  }
+
+  .home-right{
+    margin-top: 10%;
+  }
+
+  .guest-link{
+    margin-right: 10%;
+  }
+
+  .guest-link h1{
+    font-size: 50px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .home-left h1{
+    font-size: 60px;
+  }
+
+  .home-link{
+    top: 50%;
+  }
+
+  .guest-link{
+    margin-right: 10%;
+    margin-top: 30%;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .main{
+    display: block;
+    text-align: center;
+  }
+
+  .home-left{
+    width: 100%;
+    position: static;
+    margin-top: 30%;
+  }
+
+  .home-left h1{
+    font-size: 60px;
+  }
+
+  .home-link{
+    position: static;
+  }
+
+  .home-right{
+    width: 100%;
+  }
+
+  .guest-link{
+    width: 100%;
+    text-align: center;
+    margin-top: 75%;
+  }
+
+  .guest-link h1{
+    font-size: 30px;
+  }
+
+}
 

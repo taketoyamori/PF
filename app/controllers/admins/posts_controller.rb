@@ -16,7 +16,7 @@ class Admins::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.page(params[:page]).per(16)
+    @posts = Post.all.page(params[:page]).per(12)
   end
 
   def show
