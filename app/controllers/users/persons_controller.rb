@@ -4,7 +4,7 @@ class Users::PersonsController < ApplicationController
   before_action :ensure_correct_user, only: [:update, :edit]
 
   def show
-    @events = @user.events.page(params[:page]).per(9).includes(:prefecture)
+    @events = @user.events.order(created_at: :desc).page(params[:page]).per(9).includes(:prefecture)
     #DM機能の処理
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)

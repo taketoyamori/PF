@@ -17,7 +17,7 @@ class Users::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.page(params[:page]).per(8).includes(:prefecture, :user)
+    @events = Event.all.order(created_at: :desc).page(params[:page]).per(8).includes(:prefecture, :user)
   end
 
   def show
