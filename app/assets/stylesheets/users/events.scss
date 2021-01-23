@@ -207,11 +207,16 @@
   display: inline-block;
   width: 22%;
   margin: 20px 10px;
+  color: rgb(4, 19, 153);
+}
+
+.event-index-link:hover{
+  text-decoration: none;
 }
 
 .event-index-box{
   width: 100%;
-  height: 400px;
+  height: 420px;
   border: 2px solid gray;
   box-shadow: 10px 10px 15px -10px;
   text-overflow: ellipsis;
@@ -234,6 +239,16 @@
   border-radius: 20%;
   border: 2px solid gray;
   margin-top: 5px;
+}
+
+.ht{
+  color: rgb(192, 7, 7);
+  font-size: 20px;
+}
+
+.cm{
+  color: rgb(99, 99, 99);
+  font-size: 20px;
 }
 
 @media screen and (max-width:1024px) {

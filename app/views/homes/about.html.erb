@@ -1,2 +1,37 @@
-アバウトページです
+<div class="about-bg">
+  <div class="about-container">
+    <div class="about-logo">
+      <%= image_tag 'logo1.jpg', class: "logo1" %>
+    </div>
+    <div class="catch-copy">
+      <h1>『なんか、楽しいことない？』</h1>
+    </div>
+    <div class="site-introduction">
+      <p>
+        変化のない日々に飽き飽きしたことはありませんか？<br>
+        Choiceはいつもの日常を小さなイベントにして参加者を募ったり、<br>
+        逆に計画されているイベントに参加したりして、ありふれたに日常に新しい選択肢を<br>
+        生み出すことができるサービスです。
+      <p>
+      <div class="previews">
+        <div>
+          <p>使い方は簡単！</p>
+        </div>
+        <div class="slider">
+          <%= image_tag 'plan.jpg' %>
+          <%= image_tag 'contact.jpg' %>
+          <%= image_tag 'enjoy.jpg' %>
+        </div>
+      </div>
+      <p>
+        どんなイベントを開くのもあなたの自由です<br>
+        新しい友達を増やすためのイベント、仕事の幅を広げるためのイベント<br>
+        企画力を試したいなどオリジナルの使い方で楽しんでください！
+      <p>
+    </div>
+    <div class="top-link">
+      <%= link_to "使ってみる", root_path, class: "btn-shine"%>
+    </div>
+  </div>
+</div>
 <%= render 'layouts/footer' %>
