@@ -72,6 +72,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
 gem 'dotenv-rails'
+gem 'rubocop-airbnb'
 group :production do
   gem 'mysql2'
 end

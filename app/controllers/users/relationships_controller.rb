@@ -12,5 +12,4 @@ class Users::RelationshipsController < ApplicationController
     relationship.destroy
     redirect_to request.referrer || root_url
   end
-
 end

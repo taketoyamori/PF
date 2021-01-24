@@ -43,8 +43,8 @@
         <div>
           <div>
             <% unless @user.id == current_user.id %>
-              <% if @isRoom == true %>
-                <%= link_to "Direct message", room_path(@roomId), class:"input_btn4" %>
+              <% if @isroom == true %>
+                <%= link_to "Direct message", room_path(@roomid), class:"input_btn4" %>
               <% else %>
                 <%= form_for @room do |f| %>
                   <%= fields_for @entry do |e| %>

@@ -10,5 +10,4 @@ class Admins::ManagementsController < ApplicationController
     @user.update(is_deleted: true)
     redirect_to admins_managements_path
   end
-
 end

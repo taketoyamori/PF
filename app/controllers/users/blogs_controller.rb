@@ -1,5 +1,4 @@
 class Users::BlogsController < ApplicationController
-
   def index
     @blogs = Post.all.order(created_at: :desc).page(params[:page]).per(8)
   end
@@ -7,5 +6,4 @@ class Users::BlogsController < ApplicationController
   def show
     @blog = Post.find(params[:id])
   end
-
 end

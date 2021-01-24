@@ -15,5 +15,4 @@ class Users::EventsControllerTest < ActionDispatch::IntegrationTest
     get users_events_edit_url
     assert_response :success
   end
-
 end

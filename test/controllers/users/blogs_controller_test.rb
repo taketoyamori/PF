@@ -10,5 +10,4 @@ class Users::BlogsControllerTest < ActionDispatch::IntegrationTest
     get users_blogs_show_url
     assert_response :success
   end
-
 end
