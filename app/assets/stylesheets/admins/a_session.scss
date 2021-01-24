@@ -1,0 +1,81 @@
+// Place all the styles related to the admins/session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-session-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+
+.admin-session-area{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-session-area h2{
+  margin-right: 30px;
+  font-size: 40px;
+}
+
+.input_btn5{
+  display: inline-block;
+  background-color: #626662;
+  box-shadow: 0px 3px #bfbfbf;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 30px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.input_btn5:hover {
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+
+.input_btn5:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+@media screen and (max-width:1024px) {
+  .admin-session-area{
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+  .admin-session-area{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .admin-session-area h2{
+    margin-right: initial;
+    font-size: 40px;
+  }
+
+  .input_btn5{
+    margin-left: initial;
+  }
+}
+

@@ -1,0 +1,31 @@
+<header>
+  <h1 class="font-d"><%= link_to 'Choice', root_path, class:"header-logo" %></h1>
+  <nav class="global-nav">
+    <h1>MENU</h1>
+    <ul class="global-nav__list">
+      <% if user_signed_in? %>
+        <li class="global-nav__item"><%= link_to 'about', about_path %></li>
+        <li class="global-nav__item"><%= link_to 'Blogs', blogs_path %></li>
+        <li class="global-nav__item"><%= link_to 'mypage', person_path(current_user.id) %></li>
+        <li class="global-nav__item"><%= link_to 'all events', events_path %></li>
+        <li class="global-nav__item"><%= link_to 'search', search_path %></li>
+        <li class="global-nav__item"><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li class="global-nav__item"><%= link_to 'Home', root_path %></li>
+        <li class="global-nav__item"><%= link_to 'about', about_path %></li>
+        <li class="global-nav__item"><%= link_to 'self', self_path %></li>
+        <li class="global-nav__item"><%= link_to 'Blogs', blogs_path %></li>
+        <li class="global-nav__item"><%= link_to 'all events', events_path %></li>
+        <li class="global-nav__item"><%= link_to 'search', search_path %></li>
+        <li class="global-nav__item"><%= link_to 'login', new_user_session_path %></li>
+        <li class="global-nav__item"><%= link_to 'sign-up', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <div class="hamburger" id="js-hamburger">
+    <span class="hamburger__line hamburger__line--1"></span>
+    <span class="hamburger__line hamburger__line--2"></span>
+    <span class="hamburger__line hamburger__line--3"></span>
+  </div>
+  <div class="black-bg" id="js-black-bg"></div>
+</header>

@@ -1,0 +1,23 @@
+<header class="header">
+  <h1 class="application-title">
+    <%= link_to 'Choice', new_admin_session_path, class:"header-logo" %>
+  </h1>
+  <% if admin_signed_in? %>
+    <nav class="global-nav">
+      <h1>MENU</h1>
+      <ul class="global-nav__list">
+        <li class="global-nav__item"><%= link_to 'Home', admins_path %></li>
+        <li class="global-nav__item"><%= link_to 'Blog新規投稿', new_admins_post_path %></li>
+        <li class="global-nav__item"><%= link_to 'Blog一覧', admins_posts_path %></li>
+        <li class="global-nav__item"><%= link_to 'ユーザー管理', admins_managements_path %></li>
+        <li class="global-nav__item"><%= link_to 'logout', destroy_admin_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="js-hamburger">
+      <span class="hamburger__line hamburger__line--1"></span>
+      <span class="hamburger__line hamburger__line--2"></span>
+      <span class="hamburger__line hamburger__line--3"></span>
+    </div>
+    <div class="black-bg" id="js-black-bg"></div>
+  <% end %>
+</header>

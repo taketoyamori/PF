@@ -17,6 +17,8 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import "slick-theme";
+@import "slick";
 
 * {
   margin: 0;
@@ -24,39 +26,219 @@
   box-sizing: border-box;
 }
 
-header{
-  width: 100%;
-  padding: 30px 4% 10px;
+header {
   position: fixed;
+  left: 0;
   top: 0;
-  z-index: 1000;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-h1{
+.header-logo{
+  display: inline-block;
+  margin-left: 30px;
+  height: 60px;
+  color: #f2f2f5;
+  margin-top: 5px;
+  font-size: 30px;
+}
+
+.header-logo:hover{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+.global-nav {
+  position: fixed;
+  right: -320px; /* これで隠れる */
+  top: 0;
+  width: 200px; /* スマホに収まるくらい */
+  height: 100vh;
+  padding-top: 40px;
+  background-color: #fff;
+  transition: all .6s;
+  z-index: 300;
+  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+}
+
+.hamburger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px; /* クリックしやすいようにちゃんと幅を指定する */
+  height: 60px; /* クリックしやすいようにちゃんと高さを指定する */
+  cursor: pointer;
+  z-index: 300;
+}
+
+.global-nav__list {
   margin: 0;
   padding: 0;
-  font-size: 25px;
-}
-
-.nav-link{
-  text-decoration: none;
-  color: black;
-}
-
-ul {
   list-style: none;
-  margin: 0;
-  display: flex;
 }
 
-li {
-  margin: 0 0 0 15px;
-  font-size: 14px;
+.global-nav__item {
+  text-align: center;
+  padding: 0 14px;
 }
 
-nav {
-  margin: 0 0 0 auto;
+.global-nav__item a {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #111;
+}
+
+.global-nav__item a:hover {
+  background-color: #eee;
+}
+
+.hamburger__line {
+  position: absolute;
+  left: 11px;
+  width: 40px;
+  height: 1px;
+  background-color: rgb(141, 140, 140);
+  transition: all .6s;
+}
+
+.hamburger__line--1 {
+  top: 14px;
+}
+
+.hamburger__line--2 {
+  top: 29px;
+}
+
+.hamburger__line--3 {
+  top: 44px;
+}
+
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+  cursor: pointer;
+}
+
+/* 表示された時用のCSS */
+.nav-open .global-nav {
+  right: 0;
+}
+
+.nav-open .black-bg {
+  opacity: .8;
+  visibility: visible;
+}
+
+.nav-open .hamburger__line--1 {
+  transform: rotate(45deg);
+  top: 20px;
+}
+
+.nav-open .hamburger__line--2 {
+  width: 0;
+  left: 50%;
+}
+
+.nav-open .hamburger__line--3 {
+  transform: rotate(-45deg);
+  top: 20px;
+}
+
+//ページネーションデザイン（kaminari)
+.pagination {
+  justify-content: center;
+}
+/* ページ番号 */
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+/* ページ番号 */
+.pagination>.active>a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+/*ホバー時*/
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
+//フォントフリッカーデザイン
+.font-d{
+  color: #eee;
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.font-b{
+  color: rgb(0, 0, 0);
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.font-p{
+  color: rgb(249, 136, 255);
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.font-n{
+  color: rgb(62, 123, 255);
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.font-n:hover{
+  color: rgb(221, 8, 8);
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-decoration: none;
+}
+
+@keyframes textflicker {
+from {
+text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+}
+to {
+text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+}}
+
+.footer-design{
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.footer-design h3{
+  margin-top: 10px;
 }

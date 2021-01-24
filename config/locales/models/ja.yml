@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    models:
+      admin: 管理者
+      comment: コメント
+      event: イベント
+      message: メッセージ
+      post: 投稿
+      prefecture: 都道府県
+    attributes:
+      admin:
+        email: メールアドレス
+        password: パスワード
+      comment:
+        comment: コメント
+      event:
+        title: イベント名
+        introduction: イベント概要
+        date: 開催日時
+        event_image_id: イベント画像
+        prefecture_id: 開催地
+      message:
+        message: メッセージ
+      post:
+        title: タイトル
+        body: 記事本文
+        post_image_id: 投稿画像
+      prefecture:
+        name: 都道府県名
+
+
+

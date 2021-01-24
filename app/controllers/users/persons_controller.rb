@@ -1,16 +1,34 @@
 class Users::PersonsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_user
+  before_action :ensure_correct_user, only: [:update, :edit]
 
   def show
-    @user = User.find(params[:id])
-    @events = @user.events
+    @events = @user.events.order(created_at: :desc).page(params[:page]).per(9).includes(:prefecture)
+    # DM機能の処理
+    @currentuserentry = Entry.where(user_id: current_user.id)
+    @userentry = Entry.where(user_id: @user.id)
+    unless @user.id == current_user.id
+      @currentuserentry.each do |cu|
+        @userentry.each do |u|
+          if cu.room_id == u.room_id
+            @isroom = true
+            @roomid = cu.room_id
+          end
+        end
+      end
+      if @isroom
+      else
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user= User.find(params[:id])
     if @user.update(person_params)
       redirect_to person_path(@user)
     else
@@ -18,19 +36,27 @@ class Users::PersonsController < ApplicationController
     end
   end
 
-  #とりあえず時間短縮でユーザー情報物理削除
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    @user.update(is_deleted: true)
+    reset_session # sessionを切る=ログアウト
+    flash[:notice] = "退会処理が完了しました。"
     redirect_to root_path
-    #論理削除か悩み中（時間あれば論理削除にしようかな）
-    #論理削除にしたらユーザーに紐ずくデータどうするか考える※dependent=>destroyで消えない？
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def person_params
     params.require(:user).permit(:profile_image, :name, :email, :age, :introduction, :instagram, :twitter, :line)
   end
 
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to person_path(current_user.id)
+    end
+  end
 end

@@ -1,3 +1,110 @@
 // Place all the styles related to the admins/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//管理者側ホーム画面レイアウト
+
+.admin-bg{
+  width: 100%;
+}
+
+.admin-bg:before{
+  content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  background-image: image-url("bg-img8.jpg");
+  background-size:cover;
+}
+
+.admin-home-container{
+  width: 100%;
+  text-align: center;
+  margin-top: 8%;
+}
+
+.admin-home-container h2{
+  font-size: 80px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.admin-home-area{
+  width: 80%;
+  display: inline-block;
+}
+
+.admin-home-box{
+  width: 100%;
+  text-align: center;
+  background-color: rgba(203, 200, 200, 0.5);
+  margin: 20px auto;
+  border: 2px black solid;
+  border-radius: 10px;
+}
+
+.admin-home-box h4{
+  font-size: 50px;
+}
+
+.admin-home-box h1{
+  font-size: 40px;
+}
+
+.admin-home-link{
+  display: inline-block;
+  width: 50%;
+  color: black;
+  margin: 0 auto;
+}
+
+.admin-home-link:hover{
+  display: inline-block;
+  width: 80%;
+  color: white;
+  text-decoration: none;
+
+}
+
+@media screen and (max-width: 1024px) {
+  .admin-home-container{
+    margin-top: 20%;
+  }
+
+  .admin-home-box{
+    width: 100%;
+    margin: 40px auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .admin-home-container{
+    margin-top: 40%;
+  }
+
+  .admin-home-container h2{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .admin-home-area{
+    width: 100%;
+  }
+
+  .admin-home-box{
+    margin: 15px auto;
+  }
+
+  .admin-home-box h1{
+    font-size: 30px;
+  }
+
+  .admin-home-link{
+    width: 70%;
+  }
+}

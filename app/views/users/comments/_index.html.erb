@@ -1,0 +1,22 @@
+<% comments.each do |comment| %>
+  <tr>
+    <td>
+      <%= link_to person_path(comment.user.id), class:"comment-link" do %>
+        <div>
+          <%= attachment_image_tag comment.user, :profile_image, size: "40x40", fallback: "user_sample.jpg" %>
+        </div>
+        <%= comment.user.name %>
+      <% end %>
+    </td>
+    <td>
+        <%= comment.comment %>
+    </td>
+    <td>
+      <% if comment.user == current_user %>
+        <div>
+          <%= link_to "Destroy", event_comment_path(comment.event_id, comment.id), method: :delete, remote: true, class:"comment-link" %>
+        </div>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

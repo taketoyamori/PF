@@ -1,4 +1,5 @@
 class Users::CommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @event = Event.find(params[:event_id])
@@ -6,13 +7,11 @@ class Users::CommentsController < ApplicationController
     comment.event_id = @event.id
     comment.save
     @comment = Event.find(params[:event_id]).comments
-    redirect_to request.referrer || root_url
   end
 
   def destroy
     Comment.find_by(id: params[:id], event_id: params[:event_id]).destroy
     @comment = Event.find(params[:event_id]).comments
-    redirect_to request.referrer || root_url
   end
 
   private
@@ -20,5 +19,4 @@ class Users::CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:comment)
   end
-
 end

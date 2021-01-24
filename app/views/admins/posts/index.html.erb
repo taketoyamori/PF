@@ -1,2 +1,23 @@
-<h1>Admins::Posts#index</h1>
-<p>Find me in app/views/admins/posts/index.html.erb</p>
+<div class="blog-container">
+  <div class="blog-container-inner">
+    <div class="blog-top">
+      <h1 class="b-title">投稿済記事一覧</h1>
+    </div>
+    <div class="blog-area">
+      <% @posts.each do |post| %>
+        <%= link_to admins_post_path(post.id), class: "blog-link" do %>
+          <div class="blog-box">
+            <div>
+              <%= attachment_image_tag post, :post_image, fallback: "no_event_image.jpg", size: '300x200', class:"blog-image" %>
+            </div>
+            <div class="blog">
+              <p><%= post.title %></p>
+              <p>投稿日:<%= post.created_at.strftime("%Y年%m月%d日") %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= paginate @posts %>
+  <div>
+</div>

@@ -1,3 +1,178 @@
 // Place all the styles related to the admins/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//新規投稿画面レイアウト
+.post-bg{
+  width: 100%;
+}
+
+.post-bg:before{
+  content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  background-image: image-url("bg-img8.jpg");
+  background-size:cover;
+}
+
+.post-bg2{
+  width: 100%;
+}
+
+.post-bg2:before{
+  content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  background-image: image-url("bg-img3.jpg");
+  background-size:cover;
+}
+
+.post-container{
+  width: 100%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-area{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//画面左側レイアウト
+.post-area-left{
+  width: 50%;
+  text-align: center;
+}
+
+.post-image{
+  width: 80%;
+  height: 400px;
+  margin-top: 30px;
+  border: 2px solid rgb(66, 63, 63);
+  border-radius: 10px;
+}
+
+.post-image-form{
+  display: none;
+}
+
+.input_btn_admin{
+  display: inline-block;
+  background-color: #626662;
+  box-shadow: 0px 3px #bfbfbf;
+  width: 180px;
+  height: 30px;
+  margin-top: 25px;
+  border-radius: 5px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.input_btn_admin:hover {
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+
+.input_btn_admin:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.post-btn{
+  text-align: center;
+}
+
+//画面右側レイアウト
+
+.post-area-right{
+  width: 50%;
+  text-align: center;
+}
+
+.post-title{
+  width: 80%;
+  height: 40px;
+  padding: 5px;
+}
+
+.post-body-area{
+  width: 80%;
+  height: 300px;
+  padding: 5px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgb(66, 63, 63);
+}
+
+@media screen and (max-width: 1024px) {
+  .post-container{
+    width: 100%;
+    display: block;
+  }
+
+  .post-area{
+    width: 90%;
+    display: block;
+  }
+
+  .post-area-left{
+    width: 100%;
+  }
+
+  .post-image{
+    width: 70%;
+    height: 50%;
+  }
+
+  .post-area-right{
+    width: 100%;
+  }
+
+  .post-body{
+    margin: 30px auto 0px auto;
+  }
+
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width: 768px) {
+  .post-image{
+    width: 50%;
+    height: 30%;
+  }
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .post-container{
+    margin-top: 20%;
+  }
+  .post-area-left h1{
+    font-size: 30px;
+  }
+
+  .post-image{
+    margin-top: 10px;
+  }
+
+  .input_btn_admin{
+    margin-top: 10px;
+  }
+}

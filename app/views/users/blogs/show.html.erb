@@ -1,0 +1,23 @@
+<div class="blog-s-bg">
+  <div class="blog-s-container">
+    <div class="blog-s-area">
+      <div class="blog-area-left">
+        <div>
+          <h1 class="font-d"><%= @blog.title %></h1>
+        </div>
+        <div>
+          <%= attachment_image_tag @blog, :post_image, fallback: "no_event_image.jpg", size: "250x250" , class: "blog-s-image" %>
+        </div>
+      </div>
+      <div class="blog-area-right">
+        <div class="blog-body">
+          <%= safe_join(@blog.body.split("\n"),tag(:br)) %>
+        </div>
+        <div class="blog-btn">
+          <%= link_to "Blog一覧へ戻る", blogs_path, class: "input_btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

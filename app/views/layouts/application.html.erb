@@ -4,14 +4,41 @@
     <title>Choice</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <%= javascript_include_tag 'application' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <% if request.fullpath.include?("admins") %>
+      <%= render 'layouts/admins_header' %>
+    <% elsif request.fullpath.include?("admin") %>
+      <%= render 'layouts/admins_header' %>
+    <% else %>
+      <%= render 'layouts/users_header' %>
+    <% end %>
+
+    <script>
+      function toggleNav() {
+        var body = document.body;
+        var hamburger = document.getElementById('js-hamburger');
+        var blackBg = document.getElementById('js-black-bg');
+
+        hamburger.addEventListener('click', function() {
+          body.classList.toggle('nav-open');
+        });
+        blackBg.addEventListener('click', function() {
+          body.classList.remove('nav-open');
+        });
+      }
+      toggleNav();
+    </script>
     <%= yield %>
-    <%= render 'layouts/footer' %>
   </body>
 </html>

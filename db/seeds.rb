@@ -8,8 +8,8 @@ User.create!(
   password: "sample11111",
   age: 25,
   introduction: "よろしくお願いします！",
-  instagram: "sss",
-  twitter: "sss",
+  instagram: "https://www.instagram.com/",
+  twitter: "https://twitter.com/",
   line: "xxxxx" )
 
 
@@ -65,4 +65,42 @@ Prefecture.create!(name: "大分県")
 Prefecture.create!(name: "宮崎県")
 Prefecture.create!(name: "鹿児島県")
 Prefecture.create!(name: "沖縄県")
+
+#ブログテストデータ
+20.times do |n|
+  Post.create!(
+    admin_id: 1,
+    title: "ゴルフコンペ",
+    body: "コンペ開催します",
+    post_image: open("./app/assets/images/no_event_image.jpg")
+  )
+end
+
+#イベントテストデータ
+20.times do |n|
+  Event.create!(
+    user_id: 1,
+    prefecture_id: 1,
+    title: "ゴルフコンペ",
+    introduction: "コンペ開催します",
+    event_image: open("./app/assets/images/event_sample2.jpg"),
+    date: "2021-01-28"
+  )
+end
+
+#ユーザーテストデータ
+20.times do |n|
+  User.create!(
+    name: "#{n + 1}testman",
+    email: "testmail#{n + 1}@gmail.com",
+    password: "#testpass#{n + 1}",
+    age: 30,
+    introduction: "よろしく",
+    profile_image: open("./app/assets/images/user_sample2.jpg"),
+    instagram: "https://www.instagram.com/",
+    twitter: "https://twitter.com/",
+    line: "xxxxx",
+    is_deleted: false
+  )
+end
 

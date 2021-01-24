@@ -4,6 +4,10 @@
 
 // イベント,詳細,編集,新規投稿,一覧画面のレイアウトについて記載
 
+.event-bg{
+  width: 100%;
+}
+
 .event-new-container,
 .event-edit-container{
   width: 100%;
@@ -12,6 +16,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.event-bg,
+.event-index-container:before{
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-image: image-url("bg-img3.jpg");
+  background-size: cover;
 }
 
 .event-new-title,
@@ -28,6 +46,7 @@
 .event-info-box{
   width: 50%;
   height: 80%;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -48,14 +67,12 @@
 .event-info-container{
   width: 100%;
   padding: 20px;
-  height: 600px;
-
 }
 
 .event-info2{
   width:100%;
   text-align: center;
-  padding-top: 100px;
+  margin-top: 100px;
 }
 
 .event-info2 h1{
@@ -69,6 +86,43 @@
   justify-content: center;
   align-items: center;
   margin-top: 5%;
+}
+
+.event-info-center{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.event-image-box{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.event-show-image{
+  width: 80%;
+  height: 70%;
+  border: 2px solid gray;
+}
+
+.event-info-box{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.event-info-box h6{
+  margin-top: 20px;
+  background-color:rgba(191, 191, 191, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+  color:rgb(63, 63, 63);
+}
+
+.event-show-link{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .event-owner-info{
@@ -95,11 +149,6 @@
   margin: 3% auto 0 auto;
 }
 
-.event-image-box{
-  width: 100%;
-}
-
-
 .favorite{
   width: 30%;
 }
@@ -116,7 +165,7 @@
   text-decoration: none;
   text-align: center;
   border: none;
-  margin-bottom: 10px;
+  margin: 20px 10px;
 }
 
 .input_btn3:hover {
@@ -130,12 +179,6 @@
   top: 3px;
 }
 
-.comment-area{
-  width: 80%;
-  margin: 20px auto;
-  padding: 30px;
-}
-
 //一覧画面
 
 .event-index-container{
@@ -144,7 +187,7 @@
 
 .event-index{
   width: 90%;
-  margin: 100px auto;
+  margin: 100px auto 30px auto;
   text-align: center;
 }
 
@@ -157,18 +200,27 @@
   margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .event-index-link{
   display: inline-block;
-  width: 20%;
+  width: 22%;
+  margin: 20px 10px;
+  color: rgb(4, 19, 153);
+}
 
+.event-index-link:hover{
+  text-decoration: none;
 }
 
 .event-index-box{
   width: 100%;
   border: 2px solid gray;
   box-shadow: 10px 10px 15px -10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .event p{
@@ -186,4 +238,128 @@
   border-radius: 20%;
   border: 2px solid gray;
   margin-top: 5px;
+}
+
+.ht{
+  color: rgb(192, 7, 7);
+  font-size: 20px;
+}
+
+.cm{
+  color: rgb(99, 99, 99);
+  font-size: 20px;
+}
+
+@media screen and (max-width:1024px) {
+  //イベント新規投稿編集画面
+  .event-new-container{
+    display: block;
+    margin-top: 15%;
+  }
+
+  .event-edit-container{
+    display: block;
+    margin-top: 25%;
+  }
+
+  .event-new-title,
+  .event-edit-title{
+    width: 100%;
+  }
+
+  .event-info-box{
+    width: 100%;
+  }
+
+  //イベント情報詳細画面
+  .event-info2{
+    margin-top: 15%;
+  }
+
+  .event-info2 h1{
+    font-size: 70px;
+  }
+
+  //イベント一覧画面
+  .event-index-link{
+    width: 40%;
+  }
+
+  .index-user-image{
+    margin-top: 15px;
+  }
+
+  .event-index{
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  //イベント新規投稿編集画面
+  .event-new-container{
+    margin-top: 8%;
+  }
+
+  .event-edit-container{
+    margin-top: 16%;
+  }
+
+  //イベント情報詳細画面
+  .event-info2{
+    margin-top: 10%;
+  }
+
+  .event-c-form{
+    width: 100%;
+  }
+
+  .comment-area{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width:425px) {
+  //イベント新規投稿編集画面
+  .event-new-container{
+    margin-top: 20%;
+  }
+
+  .event-edit-container{
+    margin-top: 25%;
+  }
+
+  .event-new-title h1,
+  .event-edit-title h1{
+    font-size: 50px;
+  }
+
+  //イベント情報詳細画面
+
+  .event-info2{
+    margin-top: 25%;
+  }
+
+  .event-info2 h1{
+    font-size: 40px;
+  }
+
+  .event-owner-info h2{
+    font-size: 30px;
+  }
+
+  .event-owner-image{
+    height: 60px;
+    width: 60px;
+    border-radius: 20%;
+  }
+
+  .favorite{
+    margin-left: 10%;
+  }
+
+   //イベント一覧画面
+   .event-index-link{
+    width: 100%;
+  }
 }

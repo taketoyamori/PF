@@ -1,0 +1,24 @@
+<div class="blog-container">
+ <div class="blog-container-inner">
+    <div class="blog-top">
+      <h1 class="font-d">Choice Blog</h1>
+    </div>
+    <div class="blog-area">
+      <% @blogs.each do |blog| %>
+        <%= link_to blog_path(blog.id), class: "blog-link" do %>
+          <div class="blog-box">
+            <div>
+              <%= attachment_image_tag blog, :post_image, fallback: "no_event_image.jpg", size: '300x200', class:"blog-image" %>
+            </div>
+            <div class="blog">
+              <p><%= blog.title %></p>
+              <p>投稿日:<%= blog.created_at.strftime("%Y年%m月%d日") %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= paginate @blogs %>
+  <div>
+</div>
+<%= render 'layouts/footer' %>
