@@ -5,5 +5,4 @@ class Users::MessagesControllerTest < ActionDispatch::IntegrationTest
     get users_messages_create_url
     assert_response :success
   end
-
 end

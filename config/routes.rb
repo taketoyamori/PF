@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
-
   root 'homes#top'
   get 'about' => 'homes#about'
   get 'self' => 'homes#self'
   get 'search' => 'search#locate'
 
   devise_for :admins, path: 'admin', controllers: {
-    sessions: 'admins/sessions'
+    sessions: 'admins/sessions',
   }
 
   devise_for :users, path: '', controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    passwords: 'users/passwords',
   }
 
   namespace :admins do
@@ -32,7 +31,5 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
     end
-
   end
-
 end

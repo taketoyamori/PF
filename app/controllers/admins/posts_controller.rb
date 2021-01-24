@@ -47,5 +47,4 @@ class Admins::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:admin_id, :title, :body, :post_image)
   end
-
 end

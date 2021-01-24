@@ -9,5 +9,4 @@ class Users::MessagesController < ApplicationController
     end
     redirect_to "/rooms/#{@message.room_id}"
   end
-
 end

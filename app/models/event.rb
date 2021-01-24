@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
   belongs_to :user
   belongs_to :prefecture
   has_many :comments, dependent: :destroy
@@ -12,8 +11,8 @@ class Event < ApplicationRecord
   scope :search, -> (search_params) do
     return if search_params.blank?
 
-      date(search_params[:date])
-      .prefecture_id_is(search_params[:prefecture_id])
+    date(search_params[:date]).
+      prefecture_id_is(search_params[:prefecture_id])
   end
 
   scope :date, -> (date) { where(date: date) if date.present? }
@@ -25,5 +24,4 @@ class Event < ApplicationRecord
   validates :title, presence: true
   validates :introduction, presence: true
   validates :date, presence: true
-
 end
