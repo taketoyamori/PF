@@ -89,6 +89,11 @@
   display: inline-block;
   width: 28%;
   margin: 20px;
+  color: rgb(4, 19, 153);
+}
+
+.user-event-link:hover{
+  text-decoration: none;
 }
 
 .user-event-box{
