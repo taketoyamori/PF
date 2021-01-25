@@ -93,7 +93,7 @@ end
   User.create!(
     name: "#{n + 1}testman",
     email: "testmail#{n + 1}@gmail.com",
-    password: "#testpass#{n + 1}",
+    password: "testpass#{n + 1}",
     age: 30,
     introduction: "よろしく",
     profile_image: open("./app/assets/images/user_sample2.jpg"),
