@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#top'
   get 'about' => 'homes#about'
-  get 'self' => 'homes#self'
   get 'search' => 'search#locate'
 
   devise_for :admins, path: 'admin', controllers: {
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   scope module: 'users' do
-    resources :rooms, only: [:show, :index, :create]
+    resources :rooms, only: [:show, :create]
     resources :messages, only: [:create]
     resources :blogs, only: [:index, :show]
     resources :persons, only: [:show, :edit, :update, :destroy] do
