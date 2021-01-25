@@ -15,6 +15,7 @@
 
     <div class="message-area">
       <table class="table table-borderless">
+        <%= flash[:alert] %>
         <% if @messages.present? %>
           <% @messages.each do |m| %>
             <tr>
@@ -29,7 +30,6 @@
 
     <div class="posts">
       <%= form_for @message do |f| %>
-        <%= render 'layouts/error', obj: f.object %>
         <%= f.text_area :message, placeholder: "メッセージを入力して下さい" , size: 70, class:"form-text-field" %>
         <%= f.hidden_field :room_id, value: @room.id %>
         <div>
