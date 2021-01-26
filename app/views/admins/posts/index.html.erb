@@ -8,7 +8,7 @@
         <%= link_to admins_post_path(post.id), class: "blog-link" do %>
           <div class="blog-box">
             <div>
-              <%= attachment_image_tag post, :post_image, fallback: "no_event_image.jpg", size: '300x200', class:"blog-image" %>
+              <%= attachment_image_tag post, :post_image, fallback: "no_event_image.jpg", size: '300x160', class:"blog-image" %>
             </div>
             <div class="blog">
               <p><%= post.title %></p>
