@@ -3,6 +3,7 @@ class Post < ApplicationRecord
 
   attachment :post_image
 
+  validates :post_image, presence: true
   validates :title, presence: true
   validates :body, presence: true
 end
