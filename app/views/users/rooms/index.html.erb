@@ -1,0 +1,25 @@
+<div class="room-bg">
+  <div class="room-index-container">
+    <h1>DM一覧</h1>
+    <div class="room-index-table">
+      <table class="table">
+        <tr>
+          <th></th>
+          <th>ユーザー名</th>
+          <th>メッセージ内容</th>
+        </tr>
+        <% @another_entries.each do |entry| %>
+          <tr>
+            <td><%= attachment_image_tag entry.user, :profile_image, fallback: "user_sample.jpg", class:"admin-management-image" %></td>
+            <td><%= link_to entry.user.name, person_path(entry.user.id) %></td>
+            <td>
+              <%= link_to room_path(entry.room) do %>
+                <%= Message.find_by(id: entry.room.message_ids.last)&.message %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

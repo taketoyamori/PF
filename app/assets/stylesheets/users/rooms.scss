@@ -72,6 +72,18 @@
   resize: both;
 }
 
+//DM一覧画面レイアウト
+.room-index-container{
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.room-index-table{
+  width: 100%;
+}
+
 @media screen and (max-width:425px) {
   .message-area{
     width: 95%;

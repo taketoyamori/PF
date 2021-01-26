@@ -22,6 +22,7 @@ class Event < ApplicationRecord
 
   validates :prefecture_id, presence: true
   validates :title, presence: true
+  validates :event_image, presence: true
   validates :introduction, presence: true
   validates :date, presence: true
 end

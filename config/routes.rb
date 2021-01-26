@@ -20,11 +20,12 @@ Rails.application.routes.draw do
   end
 
   scope module: 'users' do
-    resources :rooms, only: [:show, :create]
-    resources :messages, only: [:create]
     resources :blogs, only: [:index, :show]
     resources :persons, only: [:show, :edit, :update, :destroy] do
       resource :relationships, only: [:create, :destroy]
+    end
+    resources :rooms, only: [:show, :index, :create] do
+      resources :messages, only: [:create, :destroy]
     end
     resources :events do
       resource :favorites, only: [:create, :destroy]

@@ -10,10 +10,11 @@
           <div class="pi-area">
             <%= link_to 'プロフィールを編集する', edit_person_path(@user), class: "input_btn2" %>
           </div>
-        <% end %>
-        <% if @user.id == current_user.id %>
           <div class="pi-area">
             <%= link_to 'イベントを開催する', new_event_path, class: "input_btn2" %>
+          </div>
+          <div class="pi-area">
+            <%= link_to 'DM履歴一覧', rooms_path, class: "input_btn2" %>
           </div>
         <% end %>
 
@@ -48,7 +49,7 @@
                 <% if @isroom == true %>
                   <%= link_to "Direct message", room_path(@roomid), class:"input_btn4" %>
                 <% else %>
-                  <%= form_for @room do |f| %>
+                  <%= form_with model: @room, url: rooms_path, local: true do |f| %>
                     <%= fields_for @entry do |e| %>
                       <%= e.hidden_field :user_id, value: @user.id %>
                     <% end %>

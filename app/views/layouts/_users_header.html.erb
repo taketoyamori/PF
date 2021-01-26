@@ -6,6 +6,7 @@
       <% if user_signed_in? %>
         <li class="global-nav__item"><%= link_to 'about', about_path %></li>
         <li class="global-nav__item"><%= link_to 'Blogs', blogs_path %></li>
+        <li class="global-nav__item"><%= link_to 'DM', rooms_path %></li>
         <li class="global-nav__item"><%= link_to 'mypage', person_path(current_user.id) %></li>
         <li class="global-nav__item"><%= link_to 'all events', events_path %></li>
         <li class="global-nav__item"><%= link_to 'search', search_path %></li>
