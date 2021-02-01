@@ -52,11 +52,11 @@
  - ブログ関係機能（新規投稿、編集、削除、一覧、詳細表示）
  - ユーザー管理機能（登録ユーザー情報確認、強制退会機能）
  - ページネーション機能(kaminari)
-
-
+## ER図
+ <img width="100%" alt="choice-er" src="https://user-images.githubusercontent.com/69230676/106502896-511e0e00-6508-11eb-94e4-02f6f9c49f4f.png">
 
 ## 使用素材
 ### サイト素材引用元サイト
 - [Pixabay](https://pixabay.com/ja/)
 - [Unsplash](https://unsplash.com/)
-***
+
