@@ -1,10 +1,11 @@
+Choice
+***
 ## サイト概要
 慣れてしまった日常生活の中に新しい選択肢を生むウェブサイト。<br>
 簡単にイベントを開催して参加者を募集できるアプリケーションです。<br>
 変化のない日々を過ごすことに飽き飽きしたことはありませんか？<br>
 オリジナルの使い方でありふれた日常に変化を与えましょう。<br>
-![PF_DEMO mov](https://user-images.githubusercontent.com/69230676/106437381-8e5aaf80-64b8-11eb-8cf8-486c250a217c.gif)
-***
+<img width="100%" alt="スクリーンショット 2021-02-02 0 31 35" src="https://user-images.githubusercontent.com/69230676/106480841-2bd0d600-64ef-11eb-9ef6-4d4880e60ab7.png">
 
 
 
