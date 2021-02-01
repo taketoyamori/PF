@@ -5,7 +5,7 @@ Choice
 簡単にイベントを開催して参加者を募集できるアプリケーションです。<br>
 変化のない日々を過ごすことに飽き飽きしたことはありませんか？<br>
 オリジナルの使い方でありふれた日常に変化を与えましょう。<br>
-<img width="100%" alt="スクリーンショット 2021-02-02 0 31 35" src="https://user-images.githubusercontent.com/69230676/106480841-2bd0d600-64ef-11eb-9ef6-4d4880e60ab7.png">
+<img width="100%" alt="スクリーンショット 2021-02-02 0 31 35" src="https://user-images.githubusercontent.com/69230676/106481279-9e41b600-64ef-11eb-9149-f3a0e208a6ad.png">
 
 
 
