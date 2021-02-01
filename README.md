@@ -17,17 +17,21 @@
 このような問題を簡単に解決する場所や、自分の持っていない良い考え方（新しい発見）を得られるような場所が<br>
 作れないかなと思い制作することにしました。
 
-***
 ## 設計書
 - [機能一覧](https://docs.google.com/spreadsheets/d/1M3Zy7kM2y-aediclQIe-jcMWCCldAduqhXVuMhDRqjg/edit#gid=2069665485)
-***
 
-## 開発環境
+## 使用技術
+### 開発環境
 - OS：macOS Catalina 10.15.7
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
-***
+### 技術
+- Ruby 2.6.3 / RubyOnRails 5.2.4
+- HTML&CSS(Sass,Bootstrap)
+- javascript,jQuery
+- AWS（VPC, EC2, RDS, Route53, ALB, ACM）
+- Nginx, Puma
+- MySQL 5.7.30
+- GithubActions（開発環境変更時のデプロイ自動化用アクション）
+
 
 ## 使用素材
 ### サイト素材引用元サイト
