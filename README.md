@@ -1,4 +1,4 @@
-# Choice
+![logo2](https://user-images.githubusercontent.com/69230676/106428425-4df53480-64ac-11eb-9142-bb2efded9956.jpg)
 
 ## サイト概要
 慣れてしまった日常生活の中に新しい選択肢を生むウェブサイト
