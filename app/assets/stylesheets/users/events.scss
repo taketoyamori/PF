@@ -266,6 +266,36 @@
   font-size: 20px;
 }
 
+.tag-area{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag-info{
+  font-weight: bold;
+  color:rgb(63, 63, 63);
+  margin-bottom: 0;
+}
+
+.tag-label {
+  background-color: rgba(63, 63, 63, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: 500;
+  display: inline;
+  padding: 5px 10px;
+  margin: 10px 5px;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 10%;
+}
+
 @media screen and (max-width:1024px) {
   //イベント新規投稿編集画面
   .event-new-container{
@@ -377,5 +407,9 @@
    //イベント一覧画面
    .event-index-link{
     width: 100%;
+  }
+
+  .tag-info{
+    font-size: 10px;
   }
 }
