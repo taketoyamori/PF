@@ -10,6 +10,10 @@ class Users::EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
+      tags = Vision.get_image_data(@event.event_image)
+      tags.each do |tag|
+        @event.tags.create(name: tag)
+      end
       redirect_to event_path(@event)
     else
       render :new
@@ -33,7 +37,13 @@ class Users::EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+    tag = Tag.where(event_id: @event.id)
+    tag.delete_all
     if @event.update(event_params)
+      tags = Vision.get_image_data(@event.event_image)
+      tags.each do |tag|
+        @event.tags.create(name: tag)
+      end
       redirect_to event_path(@event)
     else
       render :edit

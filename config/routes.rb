@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'about' => 'homes#about'
   get 'search' => 'search#locate'
+  get 'tag/:id' => 'tag#search', as: 'tag'
 
   devise_for :admins, path: 'admin', controllers: {
     sessions: 'admins/sessions',
