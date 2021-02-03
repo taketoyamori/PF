@@ -13,6 +13,14 @@
         </div>
       </div>
       <div class="event-info-center">
+        <div class="tag-area">
+          <p class="tag-info">AI解析<br>画像タグ</p>
+          <% @event.tags.each do |tag| %>
+            <%= link_to tag_path(tag) do %>
+              <span class="tag-label"><%= tag.name %></span>
+            <% end %>
+          <% end %>
+        </div>
         <div class="event-image-box">
           <%= attachment_image_tag @event, :event_image, fallback: "no_event_image.jpg", size: '300x200', class: "event-show-image" %>
         </div>
