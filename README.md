@@ -4,7 +4,7 @@
 変化のない日々を過ごすことに飽き飽きしたことはありませんか？オリジナルの使い方でありふれた日常に変化を与えましょう。<br>
 
 ## 画面サンプル
-<img width="100%" alt="ER図" src="https://user-images.githubusercontent.com/69230676/106881832-5d30e800-6721-11eb-94f8-8b5db9749773.png">
+<img width="100%" alt="responsive" src="https://user-images.githubusercontent.com/69230676/106883712-b4d05300-6723-11eb-991f-47ccbb7b73f4.png">
 
 ## 制作背景
 〜自分の生活に対して変化を求めているが、解決策が見つからない人は多い。〜<br>
@@ -55,7 +55,7 @@
  - ユーザー管理機能（登録ユーザー情報確認、強制退会機能）
  - ページネーション機能(kaminari)
 ## ER図
- <img width="100%" alt="choice-er" src="https://user-images.githubusercontent.com/69230676/106502896-511e0e00-6508-11eb-94e4-02f6f9c49f4f.png">
+ <img width="100%" alt="ER図" src="https://user-images.githubusercontent.com/69230676/106881832-5d30e800-6721-11eb-94f8-8b5db9749773.png">
 
 ## 使用素材
 ### サイト素材引用元サイト
