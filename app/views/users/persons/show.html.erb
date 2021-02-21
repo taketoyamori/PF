@@ -61,9 +61,9 @@
             <div>
               <% if current_user != @user %>
                 <% if @user.reported_by?(current_user) %>
-                  <%= link_to "通報を取り消す", person_relationships_path(@user.id), method: :delete, class: "input_btn7" %>
+                  <%= link_to "通報を取り消す", person_reports_path(@user.id), method: :delete, class: "input_btn7" %>
                 <% else %>
-                  <%= link_to "違反を通報する", person_relationships_path(@user.id), method: :post, class: "input_btn6" %>
+                  <%= link_to "違反を通報する", person_reports_path(@user.id), method: :post, class: "input_btn6" %>
                 <% end %>
               <% end %>
             </div>
