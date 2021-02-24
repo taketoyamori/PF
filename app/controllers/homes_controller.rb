@@ -5,6 +5,6 @@ class HomesController < ApplicationController
   def about
   end
 
-  def self
-  end
+  #def self
+  #end
 end

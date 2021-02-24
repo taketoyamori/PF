@@ -11,25 +11,20 @@ RSpec.describe 'Eventモデルに関するテスト', type: :model do
     end
   end
   context 'バリデーションチェック' do
-    it 'titleが空欄の場合保存できない' do
-      Event.title = ''
-      is_expected.to eq false
+    it 'イベント名が空欄の場合保存できない' do
+      expect(FactoryBot.build(:event, title:'')).to be_invalid
     end
     it 'イベント画像がない場合保存できない' do
-      Event.image = ''
-      is_expected.to eq false
+      expect(FactoryBot.build(:event, event_image:'')).to be_invalid
     end
     it '開催地がない場合保存できない' do
-      Event.prefecture_id = ''
-      is_expected.to eq false
+      expect(FactoryBot.build(:event, prefecture_id:'')).to be_invalid
     end
-    it '開催地がない場合保存できない' do
-      Event.introduction = ''
-      is_expected.to eq false
+    it 'イベント詳細情報がない場合保存できない' do
+      expect(FactoryBot.build(:event, introduction:'')).to be_invalid
     end
-    it '開催地がない場合保存できない' do
-      Event.date = ''
-      is_expected.to eq false
+    it '開催日時がない場合保存できない' do
+      expect(FactoryBot.build(:event, date:'')).to be_invalid
     end
   end
 

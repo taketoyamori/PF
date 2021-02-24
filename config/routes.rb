@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   scope module: 'users' do
     resources :blogs, only: [:index, :show]
     resources :persons, only: [:show, :edit, :update, :destroy] do
-      resource :relationships, only: [:create, :destroy]
+      resource :reports, only: [:create, :destroy]
     end
     resources :rooms, only: [:show, :index, :create] do
       resources :messages, only: [:create, :destroy]
