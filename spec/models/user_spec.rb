@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe user, "Userモデルに関するテスト", type: :model do
+RSpec.describe "Userモデルに関するテスト", type: :model do
   describe 'User情報を保存' do
     it "有効なユーザー情報が全て入力されている場合保存できるか" do
       expect(FactoryBot.create(:user)).to be_valid
@@ -25,14 +25,11 @@ RSpec.describe user, "Userモデルに関するテスト", type: :model do
 	    expect(FactoryBot.build(:user, email:'')).to be_invalid
 	  end
 	  it "メールアドレスが重複していれば保存できない" do
-      user1 = expect(FactoryBot.build(:user))
-      expect(FactoryBot.build(:user, email: user1.email)).to be_invalid
+      user1 = expect(FactoryBot.create(:user, email:'test@gmail.com'))
+      expect(FactoryBot.build(:user, email:'test@gmail.com')).to be_invalid
     end
     it "パスワードがなければ保存できない" do
 	    expect(FactoryBot.build(:user, password:'')).to be_invalid
-	  end
-    it "自己紹介文がなければ保存できない" do
-	    expect(FactoryBot.build(:user, introduction:'')).to be_invalid
 	  end
 	end
 end

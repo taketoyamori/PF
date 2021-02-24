@@ -12,10 +12,10 @@ class User < ApplicationRecord
 
   # 通報機能アソシエーション
   # 違反者側
-  has_many :violator_relationships, class_name: "Relationship", foreign_key: :violator_id, dependent: :destroy
+  has_many :violator_relationships, class_name: "Report", foreign_key: :violator_id, dependent: :destroy
   has_many :violators, through: :violator_relationships, source: :violator
   # 通報者側
-  has_many :reporter_relationships, class_name: "Relationship", foreign_key: :reporter_id, dependent: :destroy
+  has_many :reporter_relationships, class_name: "Report", foreign_key: :reporter_id, dependent: :destroy
   has_many :reporters, through: :reporter_relationships, source: :reporter
 
   attachment :profile_image
